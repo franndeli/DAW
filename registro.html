@@ -45,6 +45,44 @@
             <div><button>Registrar</button></div>
         </div>-->
     </header>
+
+    <h1>Registro nuevo usuario</h1>
+    <fieldset>
+        <legend>Por favor, introduce a continuación tus datos para registrarte</legend>
+        <form action="index.html" method="post">
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </p>
+            
+            <p>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </p>
+            
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            
+            <p>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </p>
+            
+            <p>
+                <label for="pais">País:</label>
+                <select id="pais" name="pais" required>
+                    <option value="" disabled selected>Selecciona un país</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Bolivia">Bolivia</option>
+                </select>
+            </p>
+            
+            <input type="submit" value="Registrar">
+        </form>
+    </fieldset>
+
     <footer>
         <div>
             <p>Ingeniería Multimedia</p>
