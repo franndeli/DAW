@@ -1,60 +1,77 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PhotoBoom-Foto</title>
+    <link rel="shortcut icon" href="./image/icon.jpg">
 </head>
-<body>
-    <header>
-        <!--Utilizamos una tabla para representar solamente en esta práctica
-        cómo se vería más o menos la cabecera sin utilizar CSS-->
-        <table>
-          <tr>
-            <td>
-                <a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a>
-            </td>
-            <td>
-                <h1>TÍTULO</h1>
-            </td>
-            <td>
-                <form action="buscar.html">
-                    <button>&#128270;</button>
-                </form>
-            </td>
-            <td>
-                <form action="registro.html">
-                    <button>Entrar</button>
-                </form>
-            </td>
-            <td>
-                <form action="registro.html">
-                    <button>Registrar</button>
-                </form>
-            </td>
-          </tr>
-        </table>
+<table>
+    <tr>
+      <td>
+          <a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a>
+      </td>
+      <td>
+          <h1>TÍTULO</h1>
+      </td>
+      <td>
+          <form action="buscar.html">
+              <button>&#128270;</button>
+          </form>
+      </td>
+      <td>
+          <form action="registro.html">
+              <button>Entrar</button>
+          </form>
+      </td>
+      <td>
+          <form action="registro.html">
+              <button>Registrar</button>
+          </form>
+      </td>
+    </tr>
+  </table>
 
-        <!-- Código normal para utilizar luego con CSS
-        <div>
-            <div><img src="url_de_tu_imagen" alt="Logo de la página"></div>
-            <div><h1>Mi Sitio Web</h1></div>
-            <div><button>&#128270;</button></div>
-            <div><button>Entrar</button></div>
-            <div><button>Registrar</button></div>
-        </div>-->
-    </header>
-    <footer>
-        <div>
-            <p>Ingeniería Multimedia</p>
-            <p>Desarrollo de Aplicaciones Web</p>
-            <p>2023</p>
-        </div>
-        <div class="autores">
-            <p>Samuel Cortes Yepes</p>
-            <p>Francisco José Delicado González</p>
-        </div>
-    </footer>
+
+<body>
+
+    <section>
+        <h2>Resultados de la busqueda</h2>
+        <p>Resultados de la busqueda:"2019-09-29 20:00"</p>
+
+        <article>
+            <a href="foto.html" title="Siluetas_sobre_la_luna"><img src="img/img1.jpg" alt="prado"></a>
+            <h3>Prado</h3>
+            <time datetime="2019-09-29 20:00">2019-09-29 20:00</time>
+            <p>España</p>
+        </article>
+
+        <article>
+            <a href="foto.html" title="rio"><img src="img/img2.jpg" alt="lago"></a>
+            <h3>Lago</h3>
+            <time datetime="2019-09-29 19:30">2019-09-29 19:30</time>
+            <p>España</p>
+        </article>
+
+        <article>
+            <a href="foto.html" title="campo"><img src="img/img4.jpg" alt="arboleda"></a>
+            <h3>Arboleda</h3>
+            <time datetime="2019-09-29 11:00">2019-09-29 11:00</time>
+            <p>España</p>
+        </article>
+        <footer>
+            <div>
+                <p>Ingeniería Multimedia</p>
+                <p>Desarrollo de Aplicaciones Web</p>
+                <p>2023</p>
+            </div>
+            <div class="autores">
+                <p>Samuel Cortes Yepes</p>
+                <p>Francisco José Delicado González</p>
+            </div>
+        </footer>
+    </section>
+
 </body>
 </html>
