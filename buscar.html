@@ -8,74 +8,76 @@
 </head>
 <body>
     <header>
-        <!--Utilizamos una tabla para representar solamente en esta práctica
-        cómo se vería más o menos la cabecera sin utilizar CSS-->
-        <table>
-          <tr>
-            <td>
-                <a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a>
-            </td>
-            <td>
-                <h1>TÍTULO</h1>
-            </td>
-            <td>
-                <form action="buscar.html">
-                    <button>&#128270;</button>
-                </form>
-            </td>
-            <td>
-                <form action="index_usu.html">
-                    <button>Entrar</button>
-                </form>
-            </td>
-            <td>
-                <form action="registro.html">
-                    <button>Registrar</button>
-                </form>
-            </td>
-          </tr>
-        </table>
-
-        <!-- Código normal para utilizar luego con CSS
-        <div>
-            <div><img src="url_de_tu_imagen" alt="Logo de la página"></div>
-            <div><h1>Mi Sitio Web</h1></div>
-            <div><button>&#128270;</button></div>
-            <div><button>Entrar</button></div>
-            <div><button>Registrar</button></div>
-        </div>-->
+        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
+        <div><p>TÍTULO</p></div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="index.html">
+                        <button>Inicio</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="buscar.html">
+                        <button>Buscar</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="index_usu.html" method="post">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div>
+                            <label for="contraseña">Contraseña:</label>
+                            <input type="text" id="contraseña" name="contraseña">
+                        </div>
+                        <input type="submit" value="Entrar">
+                    </form>
+                </li>   
+                <li>
+                    <form action="registro.html">
+                        <button>Registrar</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <fieldset>
-        <legend>Busca aquí tu foto: </legend>
-        <form action="resultadobusqueda.html">
-            <p>
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo">
-            </p>
-            <p>
-                <label for="pais">&#127759; País:</label>
-                <input type="text" id="pais" name="pais">
-            </p>
-            <p>
-                <label for="fechaInicio">&#128197; Fecha desde:</label>
-                <input type="date" id="fechaInicio" name="fechaInicio">
 
-                <label for="fechaFin">hasta</label>
-                <input type="date" id="fechaFin" name="fechaFin">
-            </p>
-            <button>Buscar</button>
-        </form>
-    </fieldset>
+    <main>
+        <fieldset>
+            <legend>Busca aquí tu foto: </legend>
+            <form action="resultadobusqueda.html">
+                <p>
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" name="titulo">
+                </p>
+                <p>
+                    <label for="pais">&#127759; País:</label>
+                    <input type="text" id="pais" name="pais">
+                </p>
+                <p>
+                    <label for="fechaInicio">&#128197; Fecha desde:</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio">
+    
+                    <label for="fechaFin">hasta</label>
+                    <input type="date" id="fechaFin" name="fechaFin">
+                </p>
+                <button>Buscar</button>
+            </form>
+        </fieldset>
+    </main>
+    
     <footer>
         <div>
-            <p>Ingeniería Multimedia</p>
-            <p>Desarrollo de Aplicaciones Web</p>
-            <p>2023</p>
+            <address>
+                Dirección: 123 Calle Principal, Ciudad, País<br>
+                Teléfono: (123) 456-7890<br>
+                Email: info@tusitio.com
+            </address>
         </div>
-        <div class="autores">
-            <p>Samuel Cortes Yepes</p>
-            <p>Francisco José Delicado González</p>
-        </div>
+        <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
     </footer>
+    
 </body>
 </html>
