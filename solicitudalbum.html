@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAW23</title>
+</head>
+<body>
+    <header>
+        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
+        <div><p>TÍTULO</p></div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="index.html">
+                        <button>Inicio</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="buscar.html">
+                        <button>Buscar</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="index_usu.html" method="post">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div>
+                            <label for="contraseña">Contraseña:</label>
+                            <input type="text" id="contraseña" name="contraseña">
+                        </div>
+                        <input type="submit" value="Entrar">
+                    </form>
+                </li>   
+                <li>
+                    <form action="registro.html">
+                        <button>Registrar</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Solicitud de Álbum Impreso</h1>
+        <p>Mediante esta opción de impresión de álbum y envío de uno de tus álbumes a todo color, toda resolucion. Lorem ipsum dolor sit, 
+            amet consectetur adipisicing elit. Nesciunt minus provident blanditiis culpa eligendi beatae autem iste ab voluptatum perferendis 
+            pariatur, tempora expedita hic distinctio! Odit adipisci tenetur maiores iusto.
+        </p>
+
+        <h2>Tarifas</h2>
+        <table border="1">
+            <tr>
+                <th>Número de Páginas</th>
+                <th>Tarifa</th>
+            </tr>
+            <tr>
+                <td>Menos de 5</td>
+                <td>0.10€ por pág.</td>
+            </tr>
+            <tr>
+                <td>Entre 5 y 10</td>
+                <td>0.08€ por pág.</td>
+            </tr>
+            <tr>
+                <td>Más de 11</td>
+                <td>0.07€ por pág.</td>
+            </tr>
+        </table>
+
+        <table border="1">
+            <tr>
+                <th>Color</th>
+                <th>Tarifa</th>
+            </tr>
+            <tr>
+                <td>Blanco y negro</td>
+                <td>0€</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>0.05€ por foto.</td>
+            </tr>
+        </table>
+
+        <table border="1">
+            <tr>
+                <th>Resolución</th>
+                <th>Tarifa</th>
+            </tr>
+            <tr>
+                <td>Menos de 300 dpi</td>
+                <td>0.01€ por foto</td>
+            </tr>
+            <tr>
+                <td>Más de 300 dpi</td>
+                <td>0.02€ por foto</td>
+            </tr>
+        </table>
+
+        <fieldset>
+            <h3>Formulario de solicitud</h3>
+            <p>Rellene el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
+            <form action="#" method="post">
+                <ul>
+                    <li>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" maxlength="200" required>
+                    </li>
+                    
+                    <li>
+                        <label for="titulo">Título del Álbum:</label>
+                        <input type="text" id="titulo" name="titulo" maxlength="200" required>
+                    </li>
+
+                    <li>
+                        <label for="texto_adicional">Texto Adicional:</label>
+                        <textarea id="texto_adicional" name="texto_adicional" maxlength="4000" rows="4" cols="50"></textarea>
+                    </li>
+
+                    <li>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" maxlength="200" required>                      
+                    </li>
+
+                    <!-- Dirección -->
+                    <li>
+                        <fieldset>
+                            <legend>Dirección:</legend>
+                            <label for="calle">Calle:</label>
+                            <input type="text" id="calle" name="direccion[calle]" required>
+            
+                            <label for="numero">Número:</label>
+                            <input type="text" id="numero" name="direccion[numero]" required>
+            
+                            <label for="codigopostal">CP:</label>
+                            <input type="text" id="codigopostal" name="direccion[codigopostal]" required>
+            
+                            <label for="localidad">Localidad:</label>
+                            <input type="text" id="localidad" name="direccion[localidad]" required>
+
+                            <label for="provincia">Provincia:</label>
+                            <input type="text" id="provincia" name="direccion[provincia]" required>
+                        </fieldset>
+                    </li>
+
+                    <li>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </li>
+                    
+                    <li>
+                        <label for="color_portada">Color de la Portada:</label>
+                        <input type="color" id="color_portada" name="color_portada" value="#000000">
+                    </li>
+                    
+                    <li>
+                        <label for="num_copias">Número de Copias:</label>
+                        <input type="number" id="num_copias" name="num_copias" min="1" max="99" value="1">
+                    </li>
+                    
+                    <li>
+                        <label for="resolucion">Resolución de las Fotos:</label>
+                        <input type="range" id="resolucion" name="resolucion" min="150" max="900" step="150" value="150">
+                    </li>
+        
+                    <!-- Álbum de fotos del usuario -->
+                    <li>
+                        <label for="album_usuario">Álbum de Fotos del Usuario:</label>
+                        <select id="album_usuario" name="album_usuario" required>
+                            <option value="">Selecciona un álbum</option>
+                        </select>
+                    </li>
+                    
+                    <li>
+                        <label for="fecha_recepcion">Fecha de Recepción:</label>
+                        <input type="date" id="fecha_recepcion" name="fecha_recepcion">
+                    </li>
+                    
+                    <li>
+                        <label>Impresión a Color:</label>
+                        <input type="checkbox" id="impresion_color" name="impresion_color">
+                    </li>
+        
+                    <input type="submit" value="Solicitar Álbum">
+                </ul>
+            </form>
+        </fieldset>
+    </main>
+
+    <footer>
+        <div>
+            <address>
+                Dirección: 123 Calle Principal, Ciudad, País<br>
+                Teléfono: (123) 456-7890<br>
+                Email: info@tusitio.com
+            </address>
+        </div>
+        <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
