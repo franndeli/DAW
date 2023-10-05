@@ -4,95 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DAW23</title>
 </head>
 <body>
     <header>
-        <!--Utilizamos una tabla para representar solamente en esta práctica
-        cómo se vería más o menos la cabecera sin utilizar CSS-->
-        <table>
-          <tr>
-            <td>
-                <a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a>
-            </td>
-            <td>
-                <h1>TÍTULO</h1>
-            </td>
-            <td>
-                <form action="buscar.html">
-                    <button>&#128270;</button>
-                </form>
-            </td>
-            <td>
-                <form action="registro.html">
-                    <button>Entrar</button>
-                </form>
-            </td>
-            <td>
-                <form action="registro.html">
-                    <button>Registrar</button>
-                </form>
-            </td>
-          </tr>
-        </table>
-    <!-- menu parte privado-->
-    <nav>
-        <ul>
-            <li> <a href="#">Modificar datos</a> </li>
-            <li> <a href="#">Darse de baja</a> </li>
-            <li> <a href="#">Visualizar álbumes</a> </li>
-            <li> <a href="#">Crear un nuevo álbum</a> </li>
-            <li> <a href="./solicitudalbum.html">Solicitar un álbum impreso</a> </li>  
-            <li><a href="index.html">Logout</a></li>
-        </ul>
-    </nav>
+        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
+        <div><p>TÍTULO</p></div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="index.html">
+                        <button>Inicio</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="buscar.html">
+                        <button>Buscar</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="indexsesion.html">
+                        <button>Perfil</button>
+                    </form>
+                </li>   
+            </ul>
+        </nav>
+    </header>
 
-    <!-- menu navegacion-->
-    <nav>
-		<ul>
-			<li><a href="index.html">Inicio</a></li>
-            <li><a href="buscar.html">Buscar</a></li>
-		</ul>
-    </nav>
-    
     <main>
-        <h1>Últimas publicaciones:</h1>
-            
-        <fieldset>
-            <h2>Acampada</h2>
-            <a href="aviso.html"><img src="image/acampar.jpg" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>Alemania</p>
-        </fieldset>
-
-        <fieldset>
-            <h2>Prado</h2>
-            <a href="aviso.html"><img src="image/campo.jpg" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>Suiza</p>
-        </fieldset>
-
-        <fieldset>
-            <h2>Río</h2>
-            <a href="aviso.html"><img src="image/rio.jpeg" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>España</p>
-        </fieldset>
-
-        <fieldset>
-            <h2>Camino</h2>
-            <a href="aviso.html"><img src="image/Rio_Santa.jpg" height="300" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>Francia</p>
-        </fieldset>
-
-        <fieldset>
-            <h2>Luna</h2>
-            <a href="aviso.html"><img src="image/Siluetas_sobre_la_luna.jpg" height="300" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>España</p>
-        </fieldset>
+        <nav>
+            <ul>
+                <li> <a href="#">Modificar datos</a> </li>
+                <li> <a href="#">Darse de baja</a> </li>
+                <li> <a href="#">Visualizar álbumes</a> </li>
+                <li> <a href="#">Crear un nuevo álbum</a> </li>
+                <li> <a href="solicitudalbum.html">Solicitar un álbum impreso</a> </li>  
+                <li> <a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
     </main>
+
     <footer>
         <div>
             <address>
@@ -103,6 +54,5 @@
         </div>
         <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
     </footer>
-   
 </body>
 </html>
