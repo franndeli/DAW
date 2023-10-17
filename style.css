@@ -1,0 +1,97 @@
+/* Reset básico */
+* {
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gabarito', cursive;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+}
+
+header > div,
+header > nav {
+    margin: 0 10px;
+}
+
+header > nav > ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    padding: 0;
+}
+
+header > nav > ul > li > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*HEADER*/
+
+/*MAIN*/
+main{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*MAIN*/
+
+/*PUBLICACIONES*/
+.publicaciones{
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.publicaciones > fieldset > a > img{
+    width: 300px;
+    height: 180px;
+}
+/*PUBLICACIONES*/
+
+/*FIELDSET*/
+
+.prueba{
+    font-size: xx-small;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+@media (max-width: 1628px) {
+    .publicaciones {
+        flex-wrap: wrap;
+    }
+}
