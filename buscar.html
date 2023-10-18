@@ -48,28 +48,30 @@
         </nav>
     </header>
 
-    <main>
-        <fieldset>
-            <legend>Busca aquí tu foto: </legend>
-            <form action="resultadobusqueda.html">
-                <p>
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo">
-                </p>
-                <p>
-                    <label for="pais">&#127759; País:</label>
-                    <input type="text" id="pais" name="pais">
-                </p>
-                <p>
-                    <label for="fechaInicio">&#128197; Fecha desde:</label>
-                    <input type="date" id="fechaInicio" name="fechaInicio">
-    
-                    <label for="fechaFin">hasta</label>
-                    <input type="date" id="fechaFin" name="fechaFin">
-                </p>
-                <button>Buscar</button>
-            </form>
-        </fieldset>
+    <main >
+        <div class="buscador_avanzado"> 
+            <fieldset class="cuadrado_busqueda">
+                <legend>Busca aquí tu foto: </legend>
+                <form action="resultadobusqueda.html">
+                    <p>
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" name="titulo">
+                    </p>
+                    <p>
+                        <label for="pais">&#127759; País:</label>
+                        <input type="text" id="pais" name="pais">
+                    </p>
+                    <p>
+                        <label for="fechaInicio">&#128197; Fecha desde:</label>
+                        <input type="date" id="fechaInicio" name="fechaInicio">
+        
+                        <label for="fechaFin">hasta</label>
+                        <input type="date" id="fechaFin" name="fechaFin">
+                    </p>
+                    <button>Buscar</button>
+                </form>
+            </fieldset>
+        </div>
     </main>
     
     <footer>

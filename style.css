@@ -25,6 +25,7 @@ header {
 header > div,
 header > nav {
     margin: 0 10px;
+    top: 0;
 }
 
 header > nav > ul {
@@ -70,7 +71,7 @@ main{
 
 a {
     text-decoration: none;
-    color: #007BFF;
+    color: #131518;
     transition: color 0.3s;
 }
 
@@ -94,4 +95,234 @@ footer {
     .publicaciones {
         flex-wrap: wrap;
     }
+}
+/* Estilo para el contenedor del formulario de búsqueda */
+.cuadrado_busqueda {
+    border: 2px solid #333;
+    border-radius: 0px;
+    padding: 0xp;
+    background-color: #fff;
+    height: 500px;
+    width: 700px;
+}
+
+main legend {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilo para etiquetas y campos de entrada dentro del formulario */
+main label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+main button:hover {
+    background-color: #444;
+}
+
+/* Estilo para el icono de país y fecha dentro del formulario */
+main #pais::before,
+main #fechaInicio::before {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+/* Estilo para el campo de fecha "hasta" dentro del formulario */
+main #fechaFin {
+    margin-left: 10px;
+}
+/* Estilo para los campos de búsqueda cuando se pasa el ratón sobre ellos */
+main input[type="text"]:hover,
+main input[type="date"]:hover {
+    background-color: #f2f2f2; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilo para los campos de búsqueda */
+main input[type="text"],
+main input[type="date"] {
+    width: 40%; /* Reducir el ancho al 40% del contenedor */
+    padding: 8px; /* Reducir el relleno */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+/* Estilo para el botón de búsqueda */
+main button {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.buscador_avanzado{
+justify-content:center;
+align-items: center;
+display: flex;
+flex-direction: column;
+}
+
+/* Estilo para la lista de navegación */
+nav>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #9a8282; /* Fondo negro */
+}
+
+/* Estilo para los elementos de la lista */
+nav>li {
+    padding: 10px;
+}
+
+/* Estilo para los enlaces */
+nav>a {
+    text-decoration: none;
+    color: #000000; /* Texto blanco */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Cambiar el color de los enlaces al pasar el mouse */
+nav a:hover {
+    color: #ff6600; /* Color naranja */
+}
+
+/* Estilo para el contenedor del formulario de solicitud */
+.solicitud {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el encabezado del formulario */
+.solicitud h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el párrafo de descripción */
+.solicitud p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la lista del formulario */
+.solicitud ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo para los elementos de la lista */
+.solicitud li {
+    margin-bottom: 15px;
+}
+
+/* Estilo para etiquetas en el formulario */
+.solicitud label {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para campos de entrada y elementos de formulario */
+.solicitud input[type="text"],
+.solicitud input[type="email"],
+.solicitud input[type="tel"],
+.solicitud input[type="color"],
+.solicitud input[type="number"],
+.solicitud input[type="date"],
+.solicitud textarea,
+.solicitud select,
+.solicitud input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Estilo para el botón de envío del formulario */
+.solicitud input[type="submit"] {
+    background-color: #007bff; /* Fondo azul */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.solicitud input[type="submit"]:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el ratón */
+}
+
+/* Estilo para el rango de resolución y su valor */
+.solicitud input[type="range"] {
+    width: 80%;
+}
+
+.solicitud #value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Estilo para el campo de dirección (fieldset) */
+.solicitud fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+}
+
+.solicitud fieldset legend {
+    font-weight: bold;
+}
+
+/* Estilo para las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Estilo para las celdas de encabezado */
+th {
+    background-color: #99a0a8; /* Fondo gris */
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para las celdas de datos */
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para alternar colores de fila (opcional) */
+tr:nth-child(even) {
+    background-color: #d5d5d5; /* Fondo gris claro */
+}
+
+/* Estilo para las celdas de datos en la primera columna */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Estilo para las celdas de datos en la última columna */
+td:last-child {
+    font-weight: bold;
+    color: #000000; /* Texto azul */
 }
