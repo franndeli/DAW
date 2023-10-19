@@ -13,40 +13,40 @@
 </head>
 <body>
     <header>
-        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
-        <div><p>TÍTULO</p></div>
-        <nav>
-            <ul>
-                <li>
-                    <form action="index.html">
-                        <button>Inicio</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="buscar.html">
-                        <button>Buscar</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="index_usu.html" method="post">
-                        <div>
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre">
+        <div class="logo">
+            <a href="index.html"><img src="image/respiro_natural.png" alt="Logo de la página" height="130px"></a>
+            <p class="titulo">RESPIRO NATURAL</p>
+        </div>
+        <div class="enlaces">
+            <nav>
+                <ul>
+                    <li>
+                        <a class="enlaces_menu" href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a class="enlaces_menu" href="buscar.html">Buscar</a>
+                    </li>
+                    <li>
+                        <div class="formulario_entrar">
+                            <form action="index_usu.html" method="post">
+                                <div>
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" id="nombre" name="nombre">
+                                </div>
+                                <div>
+                                    <label for="contraseña">Contraseña:</label>
+                                    <input type="text" id="contraseña" name="contraseña">
+                                </div>
+                                <button>Entrar</button>
+                            </form>
                         </div>
-                        <div>
-                            <label for="contraseña">Contraseña:</label>
-                            <input type="text" id="contraseña" name="contraseña">
-                        </div>
-                        <input type="submit" value="Entrar">
-                    </form>
-                </li>   
-                <li>
-                    <form action="registro.html">
-                        <button>Registrar</button>
-                    </form>
-                </li>
-            </ul>
-        </nav>
+                    </li>   
+                    <li>
+                        <a class="enlaces_menu" href="registro.html">Registrar</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
