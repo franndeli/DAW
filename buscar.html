@@ -13,12 +13,13 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="image/respiro_natural.png" alt="Logo de la página" height="130px"></a>
+            <a href="index.html"><img src="image/respiro_natural.png" alt="Logo de la página" height="130"></a>
             <a href="index.html"><p class="titulo">RESPIRO NATURAL</p></a>
         </div>
         <div class="enlaces">
             <nav>
-                <ul>
+                <p class="icono_menu">&#9776;</p>
+                <ul class="menu">
                     <li>
                         <a class="enlaces_menu" href="index.html">Inicio</a>
                     </li>
@@ -61,13 +62,15 @@
                         <label for="pais">&#127759; País:</label>
                         <input type="text" id="pais" name="pais">
                     </p>
-                    <p>
+                    
+                    <div class="fechas_desde_hasta">
                         <label for="fechaInicio">&#128197; Fecha desde:</label>
                         <input type="date" id="fechaInicio" name="fechaInicio">
-        
-                        <label for="fechaFin">hasta</label>
+                    
+                        <label for="fechaFin">Hasta:</label>
                         <input type="date" id="fechaFin" name="fechaFin">
-                    </p>
+                    </div>
+                    
                     <button>Buscar</button>
                 </form>
             </fieldset>
