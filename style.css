@@ -50,8 +50,8 @@ header > div > nav > ul > li > form {
 .enlaces_menu{
     background-image: linear-gradient(
       to right,
-      #ffffff,
-      #ffffff 50%, /* Cambio el color del medio para que sea el color principal */
+      #000000,
+      #000000 50%, /* Cambio el color del medio para que sea el color principal */
       #6B7D5C 0%
     );
     background-size: 200% 100%;
@@ -61,7 +61,7 @@ header > div > nav > ul > li > form {
     position: relative;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     font-size: 25px;
     font-variant: small-caps;
@@ -70,14 +70,14 @@ header > div > nav > ul > li > form {
 
 .enlaces_menu:before {
     content: '';
-    background: #ffffff;
+    background: #000000;
     display: block;
     position: absolute;
     bottom: -3px;
     left: 0;
     width: 0;
     height: 3px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .enlaces_menu:hover {
@@ -93,6 +93,22 @@ header > div > nav > ul > li > form {
     border-radius: 10px;
     padding: 5px;
     color: #6B7D5C;
+}
+
+.icono_menu{
+    display: none;
+}
+
+@media (max-width:1008px){
+    .icono_menu{
+        display: block;
+        font-size: 40px;
+        color: #6B7D5C;
+    }
+
+    .menu{
+        display: none;
+    }
 }
 /*HEADER*/
 
@@ -114,6 +130,13 @@ main{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.no_registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 /*MAIN*/
 
 /*PUBLICACIONES*/
@@ -124,24 +147,39 @@ main{
     margin-right: 20px;
 }
 
-.publicaciones > fieldset > a > img{
+.lista_publicacion_img{
+    border: 1px solid black;
     width: 300px;
     height: 180px;
 }
+
+.fecha_ubicacion > p{
+    font-style: italic;
+    color: #323232;
+}
 /*PUBLICACIONES*/
 
-/*FIELDSET*/
-.prueba{
-    font-size: xx-small;
+/*SECTION*/
+.publicacion_indv{
+    padding: 7px;
+    border: 2px solid #6B7D5C;
+    border-radius: 5px;
 }
-/*FIELDSET*/
+/*SECTION*/
 
 /*A*/
+a{
+    text-decoration: none;
+}
+
+.publicaciones > a{
+    color: #000000;
+}
 /*A*/
 
 /*BUTTON*/
 button {
-    background: linear-gradient(to bottom, #2c3325 50%, transparent 50%);
+    background: linear-gradient(to bottom, #000000 50%, transparent 50%);
     background-size: 100% 200%;
     background-position: left bottom;
     background-color: #6B7D5C;
@@ -152,7 +190,7 @@ button {
     border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
     cursor:pointer;
 }
 
@@ -173,6 +211,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 50px;
     color: #6B7D5C;
 }
+
+.titulo_publicacion{
+    text-align: center;
+}
+/*TÍTULOS*/
 
 footer {
     background-color: #5dce0059;
