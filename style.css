@@ -98,21 +98,10 @@ header > div > nav > ul > li > form {
     color: #6B7D5C;
 }
 
-.icono_menu{
+#icono_menu{
     display: none;
 }
 
-@media (max-width:1030px){
-    .icono_menu{
-        display: block;
-        font-size: 40px;
-        color: #6B7D5C;
-    }
-
-    .menu{
-        display: none;
-    }
-}
 /*HEADER*/
 
 /*LOGO*/
@@ -205,6 +194,8 @@ main > legend {
     padding: 7px;
     border: 2px solid #6B7D5C;
     border-radius: 5px;
+    width: 330px;
+    height: 350px;
 }
 /*SECTION*/
 
@@ -455,11 +446,6 @@ footer {
 /*PERFIL USUARIO*/
 
 /*SOLICITUD*/
-.solicitud{
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
 .tabla_formulario{
     display: flex;
 }
@@ -609,6 +595,13 @@ input[type="submit"]:hover {
     flex-direction: column;
     margin-top: 0;
 }
+/*SOLICITUD*/
+
+@media (max-width: 680px) {
+    .titulo{
+        display: none;
+    }
+}
 
 @media (max-width: 900px) {
     .tabla_formulario{
@@ -621,7 +614,18 @@ input[type="submit"]:hover {
         align-items: center;
     }
 }
-/*SOLICITUD*/
+
+@media (max-width:1030px){
+    #icono_menu{
+        display: block;
+        font-size: 40px;
+        color: #6B7D5C;
+    }
+
+    .menu{
+        display: none;
+    }
+}
 
 @media (max-width: 1628px) {
     .publicaciones {
