@@ -171,6 +171,8 @@ main > legend {
     padding: 20px;
     width: fit-content;
     border-radius: 5px;
+    background-color: #8f8f8f;
+    color:#474747
 }
 
 .publicacion > img{
@@ -194,6 +196,7 @@ main > legend {
 
 /*SECTION*/
 .publicacion_indv{
+    background-color: #8f8f8f;
     padding: 7px;
     border: 2px solid #555555;
     border-radius: 5px;
@@ -293,12 +296,13 @@ footer {
     border: 2px solid #555555;
     border-radius: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #8f8f8f;;
+    color: #353535;
 }
 
 .cuadrado_busqueda > legend {
     font-weight: bold;
-    color: #555555;
+    color: #3a3a3a;
     font-size: 20px;
 }
 
@@ -344,13 +348,14 @@ footer {
     margin: 0 auto;
     padding: 20px;
     border: 2px solid #555555;
-    background-color: white;
+    background-color: #8f8f8f;
     border-radius: 20px;
+    color: #353535;
 }
 
 .registro > legend {
     font-weight: bold;
-    color: #555555;
+    color: #353535;
 }
 
 .registro > form > p {

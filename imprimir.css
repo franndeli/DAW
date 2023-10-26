@@ -1,10 +1,11 @@
 /* Reset básico */
-@page{
-    margin: 1cm;
+* {
+    margin: 5px;
+    box-sizing: border-box;
 }
 
 body {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Gabarito', cursive;
     font-size: 16px;
     line-height: 1.5;
     color: #000000;
@@ -67,6 +68,7 @@ header > div > nav > ul > li > form {
 
     font-size: 25px;
     font-variant: small-caps;
+    text-decoration: none;
 }
 
 .enlaces_menu:before {
@@ -198,6 +200,10 @@ main > legend {
 /*SECTION*/
 
 /*A*/
+a{
+    text-decoration: none;
+}
+
 .publicaciones > a{
     color: #000000;
 }
@@ -261,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*TÍTULOS*/
 
-footer div, footer a {
+footer {
     display: none;
     background-color: #5dce0059;
     color: #6B7D5C;
@@ -269,7 +275,6 @@ footer div, footer a {
     text-align: center;
     border-radius: 10px;
 }
-
 
 /*BUSCADOR AVANZADO*/
 .buscador_avanzado {
@@ -281,7 +286,6 @@ footer div, footer a {
 
 /* Estilo para el contenedor de búsqueda */
 .cuadrado_busqueda {
-    display: none;
     border: 2px solid #000000;
     border-radius: 20px;
     padding: 20px;
