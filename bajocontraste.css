@@ -8,8 +8,8 @@ body {
     font-family: 'Gabarito', cursive;
     font-size: 16px;
     line-height: 1.5;
-    color: #000000;
-    background-color: #FAFAFA;
+    color: #757575;
+    background-color: #F2F2F2;
     margin-left: 15px;
     margin-right: 15px;
     margin-top: 10px;
@@ -20,8 +20,8 @@ header {
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #5dce0059;
-    color: #FFFFFF;
+    background-color: #8f8f8f;
+    color: #999999;
     border-radius: 10px;
 }
 
@@ -53,9 +53,9 @@ header > div > nav > ul > li > form {
 .enlaces_menu{
     background-image: linear-gradient(
       to right,
-      #000000,
-      #000000 50%, /* Cambio el color del medio para que sea el color principal */
-      #6B7D5C 0%
+      #D6D6D6,
+      #D6D6D6 50%, 
+      #E4E4E4 0%
     );
     background-size: 200% 100%;
     background-position: -100%;
@@ -65,7 +65,6 @@ header > div > nav > ul > li > form {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.1s ease-in-out;
-
     font-size: 25px;
     font-variant: small-caps;
     text-decoration: none;
@@ -73,7 +72,7 @@ header > div > nav > ul > li > form {
 
 .enlaces_menu:before {
     content: '';
-    background: #000000;
+    background: #E4E4E4;
     display: block;
     position: absolute;
     bottom: -3px;
@@ -92,10 +91,10 @@ header > div > nav > ul > li > form {
 }
 
 .formulario_entrar{
-    border: 2px solid #6B7D5C;
+    border: 2px solid #D6D6D6;
     border-radius: 10px;
     padding: 5px;
-    color: #6B7D5C;
+    color: #D6D6D6;
 }
 
 #icono_menu{
@@ -114,6 +113,10 @@ header > div > nav > ul > li > form {
 
 .logo > p {
     margin-left: 15px;
+}
+
+.logo_web{
+    filter: grayscale(100%);
 }
 /*LOGO*/
 
@@ -164,7 +167,7 @@ main > legend {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #6B7D5C;
+    border: 2px solid #555555;
     padding: 20px;
     width: fit-content;
     border-radius: 5px;
@@ -192,28 +195,10 @@ main > legend {
 /*SECTION*/
 .publicacion_indv{
     padding: 7px;
-    border: 2px solid #6B7D5C;
+    border: 2px solid #555555;
     border-radius: 5px;
     width: 330px;
     height: 350px;
-}
-
-.main_accesibilidad{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section_accesibilidad{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 600px;
-}
-
-.section_accesibilidad li{
-    text-align: left;
 }
 /*SECTION*/
 
@@ -228,13 +213,13 @@ a{
 /*A*/
 
 /*BUTTON*/
-.boton{
-    background: linear-gradient(to bottom, #000000 50%, transparent 50%);
+.boton, button {
+    background: linear-gradient(to bottom, #D6D6D6 50%, transparent 50%);
     background-size: 100% 200%;
     background-position: left bottom;
-    background-color: #6B7D5C;
-    border: 3px solid #333;
-    color: #FFFFFF;
+    background-color: #E4E4E4;
+    border: 3px solid #C0C0C0;
+    color: #999999;
     padding: 10px 18px;
     border: none;
     border-radius: 3px;
@@ -244,30 +229,9 @@ a{
     cursor:pointer;
 }
 
-.boton:hover {
+.boton:hover, button:hover {
     background-position: right top;
-    box-shadow: 3px 3px 7px rgb(255, 255, 255);
-}
-
-button {
-    background: linear-gradient(to bottom, #000000 50%, transparent 50%);
-    background-size: 100% 200%;
-    background-position: left bottom;
-    background-color: #6B7D5C;
-    border: 3px solid #333;
-    color: #FFFFFF;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    cursor:pointer;
-}
-
-button:hover {
-    background-position: right top;
-    box-shadow: 3px 3px 7px rgb(255, 255, 255);
+    box-shadow: 3px 3px 7px rgba(255, 255, 255, 0.2);
 }
 
 .boton_subirfoto{
@@ -286,19 +250,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-h1{
-    font-size: 30px;
-}
-
-h2{
-    text-decoration: underline;
-    color: #323232;
-}
-
 .titulo{
     font-weight: 400;
     font-size: 50px;
-    color: #6B7D5C;
+    color: #D6D6D6;
 }
 
 .titulo_publicacion{
@@ -308,8 +263,8 @@ h2{
 
 /*FOOTER*/
 footer {
-    background-color: #5dce0059;
-    color: #6B7D5C;
+    background-color: #8f8f8f;
+    color: #757575;
     padding: 20px 0;
     text-align: center;
     border-radius: 10px;
@@ -321,7 +276,7 @@ footer {
 }
 
 .a_accesibilidad:hover{
-    color: #6B7D5C;
+    color: #ffffff;
 }
 /*FOOTER*/
 
@@ -335,7 +290,7 @@ footer {
 
 /* Estilo para el contenedor de búsqueda */
 .cuadrado_busqueda {
-    border: 2px solid #6B7D5C;
+    border: 2px solid #555555;
     border-radius: 20px;
     padding: 20px;
     background-color: #fff;
@@ -343,7 +298,7 @@ footer {
 
 .cuadrado_busqueda > legend {
     font-weight: bold;
-    color: #6B7D5C;
+    color: #555555;
     font-size: 20px;
 }
 
@@ -372,7 +327,7 @@ footer {
 
 .cuadrado_busqueda input[type="text"]:hover, 
 .cuadrado_busqueda input[type="date"]:hover {
-    box-shadow: 0 0 10px #6B7D5C;
+    box-shadow: 0 0 10px #555555;
     transition: box-shadow 0.2s ease;
 }
 
@@ -388,13 +343,14 @@ footer {
     max-width: 750px;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid #6B7D5C;
+    border: 2px solid #555555;
+    background-color: white;
     border-radius: 20px;
 }
 
 .registro > legend {
     font-weight: bold;
-    color: #6B7D5C;
+    color: #555555;
 }
 
 .registro > form > p {
@@ -417,23 +373,11 @@ footer {
     border-radius: 5px;
 }
 
-.registro input[type="submit"] {
-    display: block;
-    margin-top: 20px;
-    padding: 8px;
-    background-color: #6B7D5C;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.registro > input[type="text"]:hover, 
-.registro > input[type="email"]:hover, 
-.registro > input[type="tel"]:hover, 
-.registro > select:hover {
-    box-shadow: 0 0 10px #6B7D5C;
+.registro input[type="text"]:hover, 
+.registro input[type="email"]:hover, 
+.registro input[type="tel"]:hover, 
+.registro select:hover {
+    box-shadow: 0 0 10px #555555;
     transition: box-shadow 0.2s ease;
 }
 /*REGISTRO*/
@@ -443,7 +387,7 @@ footer {
     margin-top: 25px;
     padding: 10px 0;
     border-radius: 5px;
-    border: 2px solid #6B7D5C;
+    border: 2px solid #555555;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -462,14 +406,14 @@ footer {
     padding: 8px 12px;
     display: block;
     font-size: 18px;
-    color: #000000;
+    color: #999999;
     border-radius: 3px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .perfil a:hover {
-    background-color: #6B7D5C;
-    color: #FFFFFF;
+    background-color: #D6D6D6;
+    color: #ffffff;
 }
 
 /* Para el enlace de logout, un pequeño estilo adicional para resaltarlo */
@@ -510,7 +454,7 @@ table {
 
 /* Estilo para las celdas de encabezado */
 th {
-    background-color: #596450;
+    background-color: #555555;
     color: #fff;
     padding: 5px;
     border: 1px solid #ccc;
@@ -541,19 +485,19 @@ td:last-child {
 
 .formulario_album {
     width: 75%;
-    border: 2px solid #596450;
+    border: 2px solid #555555;
     border-radius: 5px;
     padding: 20px;
     background-color: #f7f7f7;
 }
 
 .formulario_album > legend {
-    color: #596450;
+    color: #555555;
     font-weight: bold;
 }
 
 .formulario_album > h3 {
-    color: #596450;
+    color: #555555;
     margin-top: 0;
 }
 
@@ -569,16 +513,6 @@ td:last-child {
 .formulario_album > form> ul > li > label {
     display: block;
     margin-bottom: 5px;
-}
-
-.formulario_album > form> ul > li > label > input[type="submit"] {
-    background-color: #596450;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
 }
 
 input[type="submit"]:hover {
@@ -606,25 +540,8 @@ input[type="submit"]:hover {
 .formulario_album input[type="number"]:hover, 
 .formulario_album input[type="range"]:hover, 
 .formulario_album input[type="date"]:hover {
-    box-shadow: 0 0 10px #6B7D5C; 
+    box-shadow: 0 0 10px #555555; 
     transition: box-shadow 0.2s ease; 
-}
-
-.formulario_album input[type="submit"] {
-    background-color: #596450;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.formulario_album input[type="submit"]:hover {
-    background-color: #4b5335;
-    transition: background-color 0.2s ease;
 }
 
 .direccion{

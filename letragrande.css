@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Gabarito', cursive;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.5;
     color: #000000;
     background-color: #FAFAFA;
@@ -66,7 +66,7 @@ header > div > nav > ul > li > form {
     -webkit-text-fill-color: transparent;
     transition: all 0.1s ease-in-out;
 
-    font-size: 25px;
+    font-size: 35px;
     font-variant: small-caps;
     text-decoration: none;
 }
@@ -195,25 +195,7 @@ main > legend {
     border: 2px solid #6B7D5C;
     border-radius: 5px;
     width: 330px;
-    height: 350px;
-}
-
-.main_accesibilidad{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section_accesibilidad{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 600px;
-}
-
-.section_accesibilidad li{
-    text-align: left;
+    height: 380px;
 }
 /*SECTION*/
 
@@ -238,7 +220,7 @@ a{
     padding: 10px 18px;
     border: none;
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 25px;
     cursor: pointer;
     transition: all 0.2s ease;
     cursor:pointer;
@@ -259,7 +241,7 @@ button {
     padding: 10px 18px;
     border: none;
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 25px;
     cursor: pointer;
     transition: all 0.2s ease;
     cursor:pointer;
@@ -276,7 +258,7 @@ button:hover {
 }
 
 .boton_subirfoto > form > button {
-    font-size: 25px;
+    font-size: 35px;
 }
 /*BUTTON*/
 
@@ -286,18 +268,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-h1{
-    font-size: 30px;
-}
-
-h2{
-    text-decoration: underline;
-    color: #323232;
-}
-
 .titulo{
     font-weight: 400;
-    font-size: 50px;
+    font-size: 70px;
     color: #6B7D5C;
 }
 
@@ -321,7 +294,7 @@ footer {
 }
 
 .a_accesibilidad:hover{
-    color: #6B7D5C;
+    color: #ffffff;
 }
 /*FOOTER*/
 
@@ -344,7 +317,7 @@ footer {
 .cuadrado_busqueda > legend {
     font-weight: bold;
     color: #6B7D5C;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .cuadrado_busqueda > form > p {
@@ -461,7 +434,7 @@ footer {
 .perfil a {
     padding: 8px 12px;
     display: block;
-    font-size: 18px;
+    font-size: 26px;
     color: #000000;
     border-radius: 3px;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -505,7 +478,7 @@ table {
     max-width: 300px;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: 14px;
+    font-size: 25px;
 }
 
 /* Estilo para las celdas de encabezado */
@@ -514,7 +487,7 @@ th {
     color: #fff;
     padding: 5px;
     border: 1px solid #ccc;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 /* Estilo para las celdas de datos */
@@ -578,7 +551,7 @@ td:last-child {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 input[type="submit"]:hover {
@@ -617,7 +590,7 @@ input[type="submit"]:hover {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 24px;
     width: 100%;
     margin-top: 20px;
 }
@@ -635,7 +608,7 @@ input[type="submit"]:hover {
 }
 /*SOLICITUD*/
 
-@media (max-width: 680px) {
+@media (max-width: 820px) {
     .titulo{
         display: none;
     }
@@ -653,7 +626,7 @@ input[type="submit"]:hover {
     }
 }
 
-@media (max-width:1030px){
+@media (max-width:1155px){
     #icono_menu{
         display: block;
         font-size: 40px;
