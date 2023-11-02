@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"  type="text/css" href="style.css" title="Estilo Principal">
-        <link rel="alternative stylesheet" type="text/css" href="modonoche.css" title="Modo Noche" />
-        <link rel="alternative stylesheet" type="text/css" href="imprimir.css" title="Imprimir" />
-        <link rel="alternative stylesheet" type="text/css" href="bajocontraste.css" title="Bajo Contraste" />
-        <link rel="alternative stylesheet" type="text/css" href="letragrande.css" title="Letra Grande" />
+        <link rel="stylesheet"  type="text/css" href="css/style.css" title="Estilo Principal">
+        <link rel="alternative stylesheet" type="text/css" href="css/modonoche.css" title="Modo Noche" />
+        <link rel="alternative stylesheet" type="text/css" href="css/imprimir.css" title="Imprimir" />
+        <link rel="alternative stylesheet" type="text/css" href="css/bajocontraste.css" title="Bajo Contraste" />
+        <link rel="alternative stylesheet" type="text/css" href="css/letragrande.css" title="Letra Grande" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
                     </li>
                     <li>
                         <div class="formulario_entrar">
-                            <form action="index_usu.html" method="post">
+                            <form action="index_usu.html" method="post" onsubmit="return validarFormulario()">
                                 <div>
                                     <label for="nombre">Nombre:</label>
                                     <input type="text" id="nombre" name="nombre">
@@ -44,10 +44,11 @@
                                     <label for="contraseña">Contraseña:</label>
                                     <input type="text" id="contraseña" name="contraseña">
                                 </div>
-                                <button>Entrar</button>
+                                <button type="submit">Entrar</button>
                             </form>
                         </div>
-                    </li>   
+                    </li>
+                    
                     <li>
                         <a class="enlaces_menu" href="registro.html">Registrar <i class="fa-regular fa-user"></i> </a>
                     </li>
@@ -130,6 +131,21 @@
         <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
         <a class="a_accesibilidad" href="accesibilidad.html">Declaración de Accesibilidad</a>
     </footer>
+
+    <script type="text/javascript">
+        function validarFormulario() {
+            console.log("validarFormulario fue llamada");
+            var nombre = document.getElementById('nombre').value.trim();
+            var contraseña = document.getElementById('contraseña').value.trim();
+    
+            if (nombre === "" || contraseña === "") {
+                alert("Ambos campos deben estar llenos!");
+                return false;
+            }
+    
+            return true;
+        }
+    </script>
 
 </body>
 </html>

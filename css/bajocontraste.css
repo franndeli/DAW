@@ -1,0 +1,594 @@
+/* Reset básico */
+* {
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gabarito', cursive;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #757575;
+    background-color: #F2F2F2;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #8f8f8f;
+    color: #999999;
+    border-radius: 10px;
+}
+
+header > div,
+header > div > nav {
+    margin: 0 10px;
+    top: 0;
+}
+
+header > div > nav > ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    padding: 0;
+}
+
+header > div > nav > ul > li > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enlaces{
+    display: flex;
+    justify-content: center;
+    width: 55%;
+}
+
+.enlaces_menu{
+    background-image: linear-gradient(
+      to right,
+      #D6D6D6,
+      #D6D6D6 50%, 
+      #E4E4E4 0%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.1s ease-in-out;
+    font-size: 25px;
+    font-variant: small-caps;
+    text-decoration: none;
+}
+
+.enlaces_menu:before {
+    content: '';
+    background: #E4E4E4;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.1s ease-in-out;
+}
+
+.enlaces_menu:hover {
+    background-position: 0;
+}
+
+.enlaces_menu:hover::before {
+    width: 100%;
+}
+
+.formulario_entrar{
+    border: 2px solid #D6D6D6;
+    border-radius: 10px;
+    padding: 5px;
+    color: #D6D6D6;
+}
+
+#icono_menu{
+    display: none;
+}
+
+/*HEADER*/
+
+/*LOGO*/
+.logo{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    width: 45%;
+}
+
+.logo > p {
+    margin-left: 15px;
+}
+
+.logo_web{
+    filter: grayscale(100%);
+}
+/*LOGO*/
+
+/*MAIN*/
+main{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.no_registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main > legend {
+    font-weight: bold;
+    font-size: 20px;
+}
+/*MAIN*/
+
+/*PUBLICACIONES*/
+.publicaciones{
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.lista_publicacion_img{
+    border: 1px solid black;
+    width: 300px;
+    height: 180px;
+}
+
+.fecha_ubicacion > p{
+    font-style: italic;
+    color: #323232;
+}
+
+.publicacion_section{
+    display: flex;
+    justify-content: center;
+}
+
+.publicacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #555555;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 5px;
+    background-color: #8f8f8f;
+    color:#474747
+}
+
+.publicacion > img{
+    width: 100%;
+    height: auto;
+}
+
+.fecha_ubicacion_solo{
+    display: flex;
+}
+
+.fecha_ubicacion_solo > p {
+    font-size: 18px;
+}
+
+.album_usuario{
+    display: flex;
+    gap: 50px;
+}
+/*PUBLICACIONES*/
+
+/*SECTION*/
+.publicacion_indv{
+    background-color: #8f8f8f;
+    padding: 7px;
+    border: 2px solid #555555;
+    border-radius: 5px;
+    width: 330px;
+    height: 350px;
+}
+/*SECTION*/
+
+/*A*/
+a{
+    text-decoration: none;
+}
+
+.publicaciones > a{
+    color: #000000;
+}
+/*A*/
+
+/*BUTTON*/
+.boton, button {
+    background: linear-gradient(to bottom, #D6D6D6 50%, transparent 50%);
+    background-size: 100% 200%;
+    background-position: left bottom;
+    background-color: #E4E4E4;
+    border: 3px solid #C0C0C0;
+    color: #999999;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    cursor:pointer;
+}
+
+.boton:hover, button:hover {
+    background-position: right top;
+    box-shadow: 3px 3px 7px rgba(255, 255, 255, 0.2);
+}
+
+.boton_subirfoto{
+    display: flex;
+    justify-content: center;
+}
+
+.boton_subirfoto > form > button {
+    font-size: 25px;
+}
+/*BUTTON*/
+
+/*TÍTULOS*/
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.titulo{
+    font-weight: 400;
+    font-size: 50px;
+    color: #D6D6D6;
+}
+
+.titulo_publicacion{
+    text-align: center;
+}
+/*TÍTULOS*/
+
+/*FOOTER*/
+footer {
+    background-color: #8f8f8f;
+    color: #757575;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.a_accesibilidad{
+    text-decoration: none;
+    color: #000000;
+}
+
+.a_accesibilidad:hover{
+    color: #ffffff;
+}
+/*FOOTER*/
+
+/*BUSCADOR AVANZADO*/
+.buscador_avanzado {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo para el contenedor de búsqueda */
+.cuadrado_busqueda {
+    border: 2px solid #555555;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #8f8f8f;;
+    color: #353535;
+}
+
+.cuadrado_busqueda > legend {
+    font-weight: bold;
+    color: #3a3a3a;
+    font-size: 20px;
+}
+
+.cuadrado_busqueda > form > p {
+    margin-bottom: 10px;
+}
+
+.cuadrado_busqueda > label {
+    margin-bottom: 5px;
+}
+
+/* Estilo para los inputs del formulario */
+.cuadrado_busqueda input[type="text"], 
+.cuadrado_busqueda input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cuadrado_busqueda > button {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.cuadrado_busqueda input[type="text"]:hover, 
+.cuadrado_busqueda input[type="date"]:hover {
+    box-shadow: 0 0 10px #555555;
+    transition: box-shadow 0.2s ease;
+}
+
+.fechas_desde_hasta{
+    display: flex;
+    align-items: center;
+}
+/*BUSCADOR AVANZADO*/
+
+/*REGISTRO*/
+.registro {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #555555;
+    background-color: #8f8f8f;
+    border-radius: 20px;
+    color: #353535;
+}
+
+.registro > legend {
+    font-weight: bold;
+    color: #353535;
+}
+
+.registro > form > p {
+    margin-bottom: 10px;
+}
+
+.registro > label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.registro input[type="text"], 
+.registro input[type="email"], 
+.registro input[type="tel"], 
+.registro select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registro input[type="text"]:hover, 
+.registro input[type="email"]:hover, 
+.registro input[type="tel"]:hover, 
+.registro select:hover {
+    box-shadow: 0 0 10px #555555;
+    transition: box-shadow 0.2s ease;
+}
+/*REGISTRO*/
+
+/*PERFIL USUARIO*/
+.perfil {
+    margin-top: 25px;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: 2px solid #555555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.perfil ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.perfil li {
+    margin-bottom: 5px; 
+}
+
+.perfil a {
+    padding: 8px 12px;
+    display: block;
+    font-size: 18px;
+    color: #999999;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.perfil a:hover {
+    background-color: #D6D6D6;
+    color: #ffffff;
+}
+
+/* Para el enlace de logout, un pequeño estilo adicional para resaltarlo */
+.perfil li:last-child a {
+    color: red;
+    text-align: center;
+}
+
+.perfil li:last-child a:hover {
+    background-color: #000000;
+}
+/*PERFIL USUARIO*/
+
+/*SOLICITUD*/
+.tabla_formulario{
+    display: flex;
+}
+
+.tabla_div{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.formulario_div{
+    flex: 2;
+}
+
+table {
+    width: 60%; 
+    max-width: 300px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+/* Estilo para las celdas de encabezado */
+th {
+    background-color: #555555;
+    color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Estilo para las celdas de datos */
+td {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para alternar colores de fila */
+tr:nth-child(even) {
+    background-color: #e4e4e4;
+}
+
+/* Estilo para las celdas de datos en la primera columna */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Estilo para las celdas de datos en la última columna */
+td:last-child {
+    font-weight: bold;
+    color: #000000; /* Texto negro */
+}
+
+.formulario_album {
+    width: 75%;
+    border: 2px solid #555555;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.formulario_album > legend {
+    color: #555555;
+    font-weight: bold;
+}
+
+.formulario_album > h3 {
+    color: #555555;
+    margin-top: 0;
+}
+
+.formulario_album > form > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.formulario_album > form> ul > li {
+    margin-bottom: 15px;
+}
+
+.formulario_album > form> ul > li > label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #4b5335;
+}
+
+.formulario_album input[type="text"], 
+.formulario_album input[type="email"], 
+.formulario_album input[type="tel"], 
+.formulario_album select, 
+.formulario_album textarea, 
+.formulario_album input[type="number"],  
+.formulario_album input[type="date"] {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario_album input[type="text"]:hover, 
+.formulario_album input[type="email"]:hover, 
+.formulario_album input[type="tel"]:hover, 
+.formulario_album select:hover, 
+.formulario_album textarea:hover, 
+.formulario_album input[type="number"]:hover, 
+.formulario_album input[type="range"]:hover, 
+.formulario_album input[type="date"]:hover {
+    box-shadow: 0 0 10px #555555; 
+    transition: box-shadow 0.2s ease; 
+}
+
+.direccion{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+/*SOLICITUD*/
+
+@media (max-width: 680px) {
+    .titulo{
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .tabla_formulario{
+        display: flex;
+        flex-direction: column;
+    }
+    .formulario_div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width:1030px){
+    #icono_menu{
+        display: block;
+        font-size: 40px;
+        color: #6B7D5C;
+    }
+
+    .menu{
+        display: none;
+    }
+}
+
+@media (max-width: 1628px) {
+    .publicaciones {
+        flex-wrap: wrap;
+    }
+}
