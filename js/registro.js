@@ -58,8 +58,10 @@ function validarRegistro(){
     }
 
     // Validar email
-    if(validarEmail(email)===false){
-        mensajeEmail = "Email incorrecto.";
+    if (!validarEmail(email) || email.length > 254) {
+        var mensajeEmail = document.getElementById('mensaje-email');
+        mensajeEmail.textContent = "Correo electrónico inválido.";
+        return false;
     }
 
     // Validar sexo
@@ -85,10 +87,14 @@ function validarRegistro(){
 }
 
 function validarEmail(email) {
+    //Validar Email
+    var mensajeEmail = document.getElementById('mensaje-email');
+
     // Separar la parte local y el dominio del correo electrónico
     var partesEmail = email.split('@');
 
     if (partesEmail.length !== 2) {
+        mensajeEmail.textContent = "Correo electrónico inválido.";
         return false;
     }
 
@@ -137,13 +143,4 @@ function validarEmail(email) {
 
     // Si todas las validaciones pasan, el correo electrónico es válido
     return true;
-}
-
-// Llamada a la función
-var email = document.getElementById('email').value.trim();
-var mensajeEmail = document.getElementById('mensaje-email');
-
-if (!validarEmail(email) || email.length > 254) {
-    mensajeEmail.textContent = "Correo electrónico inválido.";
-    return false;
 }
