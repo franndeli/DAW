@@ -635,6 +635,11 @@ input[type="submit"]:hover {
 }
 /*SOLICITUD*/
 
+.mensaje-error {
+    color: red;
+    font-size: small;
+}
+
 @media (max-width: 680px) {
     .titulo{
         display: none;

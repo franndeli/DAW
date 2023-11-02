@@ -14,6 +14,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
     
         <script src="https://kit.fontawesome.com/2b7751e003.js" crossorigin="anonymous"></script>
+
+        <script src="js/index.js"></script>
     
         <title>DAW23</title>
     </head>
@@ -39,10 +41,12 @@
                                 <div>
                                     <label for="nombre">Nombre:</label>
                                     <input type="text" id="nombre" name="nombre">
+                                    <div class="mensaje-error" id="mensaje-nombre"></div> <!-- Etiqueta para mensaje de error -->
                                 </div>
                                 <div>
                                     <label for="contraseña">Contraseña:</label>
                                     <input type="text" id="contraseña" name="contraseña">
+                                    <div class="mensaje-error" id="mensaje-contraseña"></div> <!-- Etiqueta para mensaje de error -->
                                 </div>
                                 <button type="submit">Entrar</button>
                             </form>
@@ -131,21 +135,5 @@
         <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
         <a class="a_accesibilidad" href="accesibilidad.html">Declaración de Accesibilidad</a>
     </footer>
-
-    <script type="text/javascript">
-        function validarFormulario() {
-            console.log("validarFormulario fue llamada");
-            var nombre = document.getElementById('nombre').value.trim();
-            var contraseña = document.getElementById('contraseña').value.trim();
-    
-            if (nombre === "" || contraseña === "") {
-                alert("Ambos campos deben estar llenos!");
-                return false;
-            }
-    
-            return true;
-        }
-    </script>
-
 </body>
 </html>
