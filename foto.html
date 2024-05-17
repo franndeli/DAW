@@ -1,46 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
     <title>DAW23</title>
-    <link rel="shortcut icon" href="./image/icon.jpg">
+
+    <script src="https://kit.fontawesome.com/2b7751e003.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
-        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
-        <div><p>TÍTULO</p></div>
-        <nav>
-            <ul>
-                <li>
-                    <form action="index.html">
-                        <button>Inicio</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="buscar.html">
-                        <button>Buscar</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="indexsesion.html">
-                        <button>Perfil</button>
-                    </form>
-                </li>   
-            </ul>
-        </nav>
+        <div class="logo">
+            <a href="index.html"><img src="image/respiro_natural.png" alt="Logo de la página" height="130"></a>
+            <a href="index.html"><p class="titulo">RESPIRO NATURAL</p></a>
+        </div>
+        <div class="enlaces">
+            <nav>
+                <i id="icono_menu" class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li>
+                        <a class="enlaces_menu" href="index.html">Inicio <i class="fa-solid fa-house"></i> </a>
+                    </li>
+                    <li>
+                        <a class="enlaces_menu" href="buscar.html">Buscar <i class="fa-solid fa-magnifying-glass"></i> </a>
+                    </li>
+                    <li>
+                        <a class="enlaces_menu" href="indexsesion.html">Perfil <i class="fa-solid fa-user"></i> </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <fieldset>
-            <h1> De acampada</h1>
-            <img src="image/acampar.jpg" alt="Foto">
-            <p>Fecha: 28/10/2022</p>
-            <p>País: España</p>
-            <p>Álbum de fotos: Naturaleza</p>
-            <p>Usuario: admin</p>
-        </fieldset>
+        <div class="publicacion_section">
+            <section class="publicacion">
+                <h1> De acampada</h1>
+                <img src="image/acampar.jpg" alt="Foto">
+                <div class="fecha_ubicacion_solo">
+                    <p>28/10/2022,</p>
+                    <p>España</p>
+                </div>
+                <div class="album_usuario">
+                    <p>Álbum de fotos: Naturaleza</p>
+                    <p>Usuario: admin</p>
+                </div>                 
+            </section>
+        </div>
     </main>
 
     <footer>

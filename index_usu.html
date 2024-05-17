@@ -4,74 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
     <title>DAW23</title>
+
+    <script src="https://kit.fontawesome.com/2b7751e003.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
-        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
-        <div><p>TÍTULO</p></div>
-        <nav>
-            <ul>
-                <li>
-                    <form action="index.html">
-                        <button>Inicio</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="buscar.html">
-                        <button>Buscar</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="indexsesion.html">
-                        <button>Perfil</button>
-                    </form>
-                </li>   
-            </ul>
-        </nav>
+        <div class="logo">
+            <a href="index.html"><img src="image/respiro_natural.png" alt="Logo de la página" height="130"></a>
+            <a href="index.html"><p class="titulo">RESPIRO NATURAL</p></a>
+        </div>
+        <div class="enlaces">
+            <nav>
+                <i id="icono_menu" class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li>
+                        <a class="enlaces_menu" href="index.html">Inicio <i class="fa-solid fa-house"></i> </a>
+                    </li>
+                    <li>
+                        <a class="enlaces_menu" href="buscar.html">Buscar <i class="fa-solid fa-magnifying-glass"></i> </a>
+                    </li>
+                    <li>
+                        <a class="enlaces_menu" href="indexsesion.html">Perfil <i class="fa-solid fa-user"></i> </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
+    
     <main>
         <h1>Últimas publicaciones:</h1>
-            
-        <fieldset>
-            <h2>Acampada</h2>
-            <a href="foto.html"><img src="image/acampar.jpg" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>Alemania</p>
-        </fieldset>
+        
+        <div class="publicaciones">
 
-        <fieldset>
-            <h2>Prado</h2>
-            <a href="foto.html"><img src="image/campo.jpg" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>Suiza</p>
-        </fieldset>
+            <a href="foto.html">
+                <section class="publicacion_indv">
+                    <h2 class="titulo_publicacion">Acampada</h2>
+                    <img class="lista_publicacion_img" src="image/acampar.jpg" alt="Foto1">
+                    <div class="fecha_ubicacion">
+                        <p>23/04/2006</p>
+                        <p>España</p>
+                    </div>
+                </section>
+            </a>
 
-        <fieldset>
-            <h2>Río</h2>
-            <a href="foto.html"><img src="image/rio.jpeg" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>España</p>
-        </fieldset>
+            <a href="foto.html">
+                <section class="publicacion_indv">
+                    <h2 class="titulo_publicacion">Prado</h2>
+                    <img class="lista_publicacion_img" src="image/campo.jpg" alt="Foto1">
+                    <div class="fecha_ubicacion">
+                        <p>23/04/2006</p>
+                        <p>España</p>
+                    </div>
+                </section>
+            </a>
 
-        <fieldset>
-            <h2>Camino</h2>
-            <a href="foto.html"><img src="image/Rio_Santa.jpg" height="300" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>Francia</p>
-        </fieldset>
+            <a href="foto.html">
+                <section class="publicacion_indv">
+                    <h2 class="titulo_publicacion">Río</h2>
+                    <img class="lista_publicacion_img" src="image/rio.jpeg" alt="Foto1">
+                    <div class="fecha_ubicacion">
+                        <p>23/04/2006</p>
+                        <p>España</p>
+                    </div>
+                </section>
+            </a>
 
-        <fieldset>
-            <h2>Luna</h2>
-            <a href="foto.html"><img src="image/Siluetas_sobre_la_luna.jpg" height="300" alt="Foto1"></a>
-            <p>23/04/2006</p>
-            <p>España</p>
-        </fieldset>
+            <a href="foto.html">
+                <section class="publicacion_indv">
+                    <h2 class="titulo_publicacion">Camino</h2>
+                    <img class="lista_publicacion_img" src="image/Rio_Santa.jpg" height="300" alt="Foto1">
+                    <div class="fecha_ubicacion">
+                        <p>23/04/2006</p>
+                        <p>España</p>
+                    </div>
+                </section>
+            </a>
 
-        <form action="#">
-            <button>Subir foto</button>
-        </form>
+            <a href="foto.html">
+                <section class="publicacion_indv">
+                    <h2 class="titulo_publicacion">Luna</h2>
+                    <img class="lista_publicacion_img" src="image/Siluetas_sobre_la_luna.jpg" height="300" alt="Foto1">
+                    <div class="fecha_ubicacion">
+                        <p>23/04/2006</p>
+                        <p>España</p>
+                    </div>
+                </section>
+            </a>
+        </div>
+
+        <div class="boton_subirfoto">
+            <form action="#">
+                <button>Subir foto <i class="fa-solid fa-image"></i> </button>
+            </form>
+        </div>
     </main>
     
     <footer>

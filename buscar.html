@@ -4,68 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2b7751e003.js" crossorigin="anonymous"></script>
+
     <title>DAW23</title>
 </head>
 <body>
     <header>
-        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
-        <div><p>TÍTULO</p></div>
-        <nav>
-            <ul>
-                <li>
-                    <form action="index.html">
-                        <button>Inicio</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="buscar.html">
-                        <button>Buscar</button>
-                    </form>
-                </li>
-                <li>
-                    <form action="index_usu.html" method="post">
-                        <div>
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre">
+        <div class="logo">
+            <a href="index.html"><img src="image/respiro_natural.png" alt="Logo de la página" height="130"></a>
+            <a href="index.html"><p class="titulo">RESPIRO NATURAL</p></a>
+        </div>
+        <div class="enlaces">
+            <nav>
+                <i id="icono_menu" class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li>
+                        <a class="enlaces_menu" href="index.html">Inicio <i class="fa-solid fa-house"></i> </a>
+                    </li>
+                    <li>
+                        <a class="enlaces_menu" href="buscar.html">Buscar <i class="fa-solid fa-magnifying-glass"></i> </a>
+                    </li>
+                    <li>
+                        <div class="formulario_entrar">
+                            <form action="index_usu.html" method="post">
+                                <div>
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" id="nombre" name="nombre">
+                                </div>
+                                <div>
+                                    <label for="contraseña">Contraseña:</label>
+                                    <input type="text" id="contraseña" name="contraseña">
+                                </div>
+                                <button>Entrar</button>
+                            </form>
                         </div>
-                        <div>
-                            <label for="contraseña">Contraseña:</label>
-                            <input type="text" id="contraseña" name="contraseña">
-                        </div>
-                        <input type="submit" value="Entrar">
-                    </form>
-                </li>   
-                <li>
-                    <form action="registro.html">
-                        <button>Registrar</button>
-                    </form>
-                </li>
-            </ul>
-        </nav>
+                    </li>   
+                    <li>
+                        <a class="enlaces_menu" href="registro.html">Registrar <i class="fa-regular fa-user"></i> </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <fieldset>
-            <legend>Busca aquí tu foto: </legend>
-            <form action="resultadobusqueda.html">
-                <p>
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo">
-                </p>
-                <p>
-                    <label for="pais">&#127759; País:</label>
-                    <input type="text" id="pais" name="pais">
-                </p>
-                <p>
-                    <label for="fechaInicio">&#128197; Fecha desde:</label>
-                    <input type="date" id="fechaInicio" name="fechaInicio">
-    
-                    <label for="fechaFin">hasta</label>
-                    <input type="date" id="fechaFin" name="fechaFin">
-                </p>
-                <button>Buscar</button>
-            </form>
-        </fieldset>
+    <main >
+        <div class="buscador_avanzado"> 
+            <fieldset class="cuadrado_busqueda">
+                <legend>Busca aquí tu foto: </legend>
+                <form action="resultadobusqueda.html">
+                    <p>
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" name="titulo">
+                    </p>
+                    <p>
+                        <label for="pais">&#127759; País:</label>
+                        <input type="text" id="pais" name="pais">
+                    </p>
+                    
+                    <div class="fechas_desde_hasta">
+                        <label for="fechaInicio">&#128197; Fecha desde:</label>
+                        <input type="date" id="fechaInicio" name="fechaInicio">
+                    
+                        <label for="fechaFin">Hasta:</label>
+                        <input type="date" id="fechaFin" name="fechaFin">
+                    </div>
+                    
+                    <button>Buscar</button>
+                </form>
+            </fieldset>
+        </div>
     </main>
     
     <footer>
