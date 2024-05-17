@@ -17,7 +17,7 @@ body {
 
 /*HEADER*/
 header {
-    display: flex;
+    display: none;
     align-items: center;
     padding: 10px 20px;
     background-color: #5dce0059;
@@ -146,8 +146,8 @@ main > legend {
 
 .lista_publicacion_img{
     border: 1px solid black;
-    width: 300px;
-    height: 180px;
+    width: 250px;
+    height: 130px;
 }
 
 .fecha_ubicacion > p{
@@ -164,7 +164,7 @@ main > legend {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #6B7D5C;
+    border: 2px solid #000000;
     padding: 20px;
     width: fit-content;
     border-radius: 5px;
@@ -192,28 +192,10 @@ main > legend {
 /*SECTION*/
 .publicacion_indv{
     padding: 7px;
-    border: 2px solid #6B7D5C;
+    border: 2px solid #000000;
     border-radius: 5px;
-    width: 330px;
-    height: 350px;
-}
-
-.main_accesibilidad{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section_accesibilidad{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 600px;
-}
-
-.section_accesibilidad li{
-    text-align: left;
+    width: 280px;
+    height: 300px;
 }
 /*SECTION*/
 
@@ -232,42 +214,30 @@ a{
     background: linear-gradient(to bottom, #000000 50%, transparent 50%);
     background-size: 100% 200%;
     background-position: left bottom;
-    background-color: #6B7D5C;
-    border: 3px solid #333;
-    color: #FFFFFF;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    color: #000000;
     padding: 10px 18px;
-    border: none;
     border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.2s ease;
     cursor:pointer;
-}
-
-.boton:hover {
-    background-position: right top;
-    box-shadow: 3px 3px 7px rgb(255, 255, 255);
 }
 
 button {
     background: linear-gradient(to bottom, #000000 50%, transparent 50%);
     background-size: 100% 200%;
     background-position: left bottom;
-    background-color: #6B7D5C;
-    border: 3px solid #333;
-    color: #FFFFFF;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    color: #000000;
     padding: 10px 18px;
-    border: none;
     border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.2s ease;
     cursor:pointer;
-}
-
-button:hover {
-    background-position: right top;
-    box-shadow: 3px 3px 7px rgb(255, 255, 255);
 }
 
 .boton_subirfoto{
@@ -286,15 +256,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-h1{
-    font-size: 30px;
-}
-
-h2{
-    text-decoration: underline;
-    color: #323232;
-}
-
 .titulo{
     font-weight: 400;
     font-size: 50px;
@@ -306,24 +267,14 @@ h2{
 }
 /*TÍTULOS*/
 
-/*FOOTER*/
 footer {
+    display: none;
     background-color: #5dce0059;
     color: #6B7D5C;
     padding: 20px 0;
     text-align: center;
     border-radius: 10px;
 }
-
-.a_accesibilidad{
-    text-decoration: none;
-    color: #000000;
-}
-
-.a_accesibilidad:hover{
-    color: #6B7D5C;
-}
-/*FOOTER*/
 
 /*BUSCADOR AVANZADO*/
 .buscador_avanzado {
@@ -335,7 +286,7 @@ footer {
 
 /* Estilo para el contenedor de búsqueda */
 .cuadrado_busqueda {
-    border: 2px solid #6B7D5C;
+    border: 2px solid #000000;
     border-radius: 20px;
     padding: 20px;
     background-color: #fff;
@@ -343,7 +294,7 @@ footer {
 
 .cuadrado_busqueda > legend {
     font-weight: bold;
-    color: #6B7D5C;
+    color: #000000;
     font-size: 20px;
 }
 
@@ -388,13 +339,13 @@ footer {
     max-width: 750px;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid #6B7D5C;
+    border: 2px solid #000000;
     border-radius: 20px;
 }
 
 .registro > legend {
     font-weight: bold;
-    color: #6B7D5C;
+    color: #000000;
 }
 
 .registro > form > p {
@@ -541,19 +492,14 @@ td:last-child {
 
 .formulario_album {
     width: 75%;
-    border: 2px solid #596450;
+    border: 2px solid #000000;
     border-radius: 5px;
     padding: 20px;
     background-color: #f7f7f7;
 }
 
-.formulario_album > legend {
-    color: #596450;
-    font-weight: bold;
-}
-
 .formulario_album > h3 {
-    color: #596450;
+    color: #000000;
     margin-top: 0;
 }
 
