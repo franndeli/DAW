@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAW23</title>
+</head>
+<body>
+    <header>
+        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
+        <div><p>TÍTULO</p></div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="index.html">
+                        <button>Inicio</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="buscar.html">
+                        <button>Buscar</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="index_usu.html" method="post">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div>
+                            <label for="contraseña">Contraseña:</label>
+                            <input type="text" id="contraseña" name="contraseña">
+                        </div>
+                        <input type="submit" value="Entrar">
+                    </form>
+                </li>   
+                <li>
+                    <form action="registro.html">
+                        <button>Registrar</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Registro nuevo usuario</h1>
+        <fieldset>
+            <legend>Por favor, introduce a continuación tus datos para registrarte</legend>
+            <form action="index_usu.html" method="post">
+                <p>
+                    <label for="nombre_r">Nombre:</label>
+                    <input type="text" id="nombre_r" name="nombre_r">
+                </p>
+                
+                <p>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos">
+                </p>
+                
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </p>
+                
+                <p>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </p>
+                
+                <p>
+                    <label for="pais">País:</label>
+                    <select id="pais" name="pais">
+                        <option value="" disabled selected>Selecciona un país</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Bolivia">Bolivia</option>
+                    </select>
+                </p>
+                
+                <input type="submit" value="Registrar">
+            </form>
+        </fieldset>
+    </main>
+
+    <footer>
+        <div>
+            <address>
+                Dirección: 123 Calle Principal, Ciudad, País<br>
+                Teléfono: (123) 456-7890<br>
+                Email: info@tusitio.com
+            </address>
+        </div>
+        <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

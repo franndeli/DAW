@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAW23</title>
+    <link rel="shortcut icon" href="./image/icon.jpg">
+</head>
+<body>
+    <header>
+        <div><a href="index.html"><img src="url_de_tu_imagen" alt="Logo de la página"></a></div>
+        <div><p>TÍTULO</p></div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="index.html">
+                        <button>Inicio</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="buscar.html">
+                        <button>Buscar</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="index_usu.html" method="post">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div>
+                            <label for="contraseña">Contraseña:</label>
+                            <input type="text" id="contraseña" name="contraseña">
+                        </div>
+                        <input type="submit" value="Entrar">
+                    </form>
+                </li>   
+                <li>
+                    <form action="registro.html">
+                        <button>Registrar</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <fieldset>
+            <legend>Busca aquí tu foto: </legend>
+            <form action="resultadobusqueda.html">
+                <p>
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" name="titulo">
+                </p>
+                <p>
+                    <label for="pais">&#127759; País:</label>
+                    <input type="text" id="pais" name="pais">
+                </p>
+                <p>
+                    <label for="fechaInicio">&#128197; Fecha desde:</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio">
+    
+                    <label for="fechaFin">hasta</label>
+                    <input type="date" id="fechaFin" name="fechaFin">
+                </p>
+                <button>Buscar</button>
+            </form>
+        </fieldset>
+
+        <h1>Resultados:</h1>
+        <p>Resultados de la busqueda:"Luna, España, 29/09/2019"</p>
+
+        <fieldset>
+            <h2>Luna</h2>
+            <a href="foto.html" title="Siluetas_sobre_la_luna"><img src="image/Siluetas_sobre_la_luna.jpg" height="300" alt="luna"></a>
+            <p>29/09/2019</p>
+            <p>España</p>
+        </fieldset>
+    </main>
+
+    <footer>
+        <div>
+            <address>
+                Dirección: 123 Calle Principal, Ciudad, País<br>
+                Teléfono: (123) 456-7890<br>
+                Email: info@tusitio.com
+            </address>
+        </div>
+        <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
