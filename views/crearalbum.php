@@ -9,9 +9,9 @@
     <title><?php echo $title; ?></title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }
@@ -28,10 +28,13 @@
     <main class="main_crear_album">
         <fieldset class="crear_album">
             <legend>Crea tu nuevo álbum:</legend>
-            <form action="perfil">
+            <form action="crearalbum" method="post">
                 <p>
                     <label for="titulo_a">Título:</label>
                     <input type="text" id="titulo_a" name="titulo_a">
+                    <?php if (!empty($data['error'])): ?>
+                        <p class="mensaje_error"><?php echo htmlspecialchars($data['error']); ?></p>
+                    <?php endif; ?>
                 </p>
                 <p>
                     <label for="descripcion_a">Descripción:</label>

@@ -9,9 +9,9 @@
     <title>Estilos</title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }
@@ -27,15 +27,16 @@
     <?php require_once('views/header.php'); ?>
     <main>
         <h1>Configurar Estilos</h1>
-        <ul>
-            <?php //print_r($data['estilos']);
-            foreach ($data['estilos'] as $estilo): ?>
-                <li>
-                    <?php echo htmlspecialchars($estilo['Nombre']); ?> - 
-                    <?php echo htmlspecialchars($estilo['Descripcion']); ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <form class="estilos-select" action="/DAW/configurarestilos/mostrarEstilo" method="post">
+            <select name="estiloId">
+                <?php foreach ($data['estilos'] as $estilo): ?>
+                    <option value="<?php echo htmlspecialchars($estilo['IdEstilo']); ?>">
+                        <?php echo htmlspecialchars($estilo['Nombre']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">Ver Estilo</button>
+        </form>
     </main>
     <?php require_once('views/footer.php'); ?>
 </body>

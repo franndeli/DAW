@@ -7,9 +7,9 @@
     <title> Mis álbumes</title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }

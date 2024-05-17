@@ -9,9 +9,9 @@
     <title>Comprobar album</title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }
@@ -28,7 +28,9 @@
     <main>
         <h1>Comprobación de Datos del Álbum</h1>
         <div>
-            <?php if (isset($datos)): ?>
+            <?php print_r($datos['direccion_completa']);
+            if (isset($datos)): ?>
+            <form action="/DAW/solicitudalbum/procesarFormulario" method="POST">
                 <ul>
                     <li><strong>Nombre:</strong> <?php echo htmlspecialchars($datos['nombre_persona_album']); ?></li>
                     <li><strong>Título del Álbum:</strong> <?php echo htmlspecialchars($datos['titulo_album']); ?></li>
@@ -46,19 +48,23 @@
                     <li><strong>Color de la Portada:</strong> <span style="background-color:<?php echo htmlspecialchars($datos['color_portada']); ?>;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
                     <li><strong>Número de Copias:</strong> <?php echo (int) $datos['num_copias']; ?></li>
                     <li><strong>Resolución de las Fotos:</strong> <?php echo (int) $datos['resolucion']; ?> dpi</li>
-                    <li><strong>Álbum de Fotos:</strong> <?php echo htmlspecialchars($datos['album_usuario']); ?></li>
+                    <li><strong>Álbum de Fotos:</strong> <?php echo htmlspecialchars($datos['nombre_album']); ?></li>
                     <li><strong>Fecha de Recepción:</strong> <?php echo htmlspecialchars($datos['fecha_recepcion']); ?></li>
                     <li><strong>Impresión a Color:</strong> <?php echo isset($datos['impresion_color']) ? 'Sí' : 'No'; ?></li>
                 </ul>
-            <P class="precio_total">PRECIO TOTAL: <?php echo htmlspecialchars($datos['costeTotal']); ?> € <p>
-            <?php else: ?>
-                <p>No se han proporcionado datos.</p>
-            <?php endif; ?>
+
+                <input type="hidden" name="album_usuario" value="<?php echo htmlspecialchars($datos['album_usuario']); ?>">
+
+                <P class="precio_total">PRECIO TOTAL: <?php echo htmlspecialchars($datos['costeTotal']); ?> € <p>
+                <?php else: ?>
+                    <p>No se han proporcionado datos.</p>
+                <?php endif; ?>
+            
+                <p>¿Es correcto?</p>
+            
+                <button type="submit" name="confirmar">Sí, continuar</button>
+            </form>
         </div>
-        <p>¿Es correcto?</p>
-        <form action="home">
-            <button>Sí, continuar</button>
-        </form>
 
         <button type="button" onclick="window.history.back();">No, volver</button>
     </main>

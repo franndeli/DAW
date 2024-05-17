@@ -7,7 +7,7 @@ class Foto extends Model {
     private $table_name = "Fotos";
 
     public function getFotos() {
-        $query = "SELECT f.idFoto, f.titulo, f.fecha, p.NomPais, f.fichero, f.fregistro, a.Titulo as NombreAlbum FROM " . $this->table_name . " f JOIN Paises p ON f.Pais = p.IdPais JOIN Albumes a ON f.Album = a.IdAlbum";
+        $query = "SELECT f.idFoto, f.titulo, f.fecha, p.NomPais, f.fichero, f.fregistro, a.Titulo as NombreAlbum FROM " . $this->table_name . " f JOIN Paises p ON f.Pais = p.IdPais JOIN Albumes a ON f.Album = a.IdAlbum LIMIT 5";
         $stmt = $this->conn->prepare($query);
 
         if (!$stmt->execute()) {
@@ -69,6 +69,21 @@ class Foto extends Model {
 
         $stmt->execute();
         return $stmt;
+    }
+
+    public function insertarFoto($titulo, $descripcion, $fecha, $pais, $album, $fichero, $textoAlternativo) {
+        $query = "INSERT INTO fotos (Titulo, Descripcion, Fecha, Pais, Album, Fichero, Alternativo) VALUES (:Titulo, :Descripcion, :Fecha, :Pais, :Album, :Fichero, :Alternativo)";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':Titulo', $titulo, PDO::PARAM_STR);
+        $stmt->bindParam(':Descripcion', $descripcion, PDO::PARAM_STR);
+        $stmt->bindParam(':Fecha', $fecha, PDO::PARAM_STR);
+        $stmt->bindParam(':Pais', $pais, PDO::PARAM_INT);
+        $stmt->bindParam(':Album', $album, PDO::PARAM_INT);
+        $stmt->bindParam(':Fichero', $fichero, PDO::PARAM_STR);
+        $stmt->bindParam(':Alternativo', $textoAlternativo, PDO::PARAM_STR);
+
+        return $stmt->execute();
     }
 }
 ?>

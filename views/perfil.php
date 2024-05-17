@@ -17,9 +17,9 @@
     <title><?php echo $title; ?></title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }
@@ -49,7 +49,7 @@
             <ul>
                 <li> <a href="datosusuario">Modificar datos</a> </li>
                 <li> <a href="configurarestilos">Configurar estilos</a></li>
-                <li> <a href="#">Darse de baja</a> </li>
+                <li> <a href="darsedebaja">Darse de baja</a> </li>
                 <li> <a href="misalbumes">Mis álbumes</a> </li>
                 <li> <a href="misfotos">Mis fotos</a> </li>
                 <li> <a href="anadirfoto">Añadir foto a album</a> </li>

@@ -10,5 +10,14 @@ class Estilo extends Model {
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function obtenerEstiloPorId($id) {
+        $query = "SELECT * FROM estilos WHERE IdEstilo = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>

@@ -6,9 +6,9 @@
     <title>Modificar Datos</title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }
@@ -23,8 +23,9 @@
 <body>
 <?php require_once('views/header.php'); ?>
     <main>
-        <?php $action_url = 'registro';
-        $datosUsuario = $data['datosUsuario'];
+        <?php $action_url = 'datosusuario';
+        $datosUsuario = $datosUsuario ?? [];
+        print_r($datosUsuario);
         require_once('views/formulario_usuario.php'); ?>
     </main>
     <?php require_once('views/footer.php'); ?>

@@ -9,9 +9,9 @@
     <title><?php echo $title; ?></title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }
@@ -36,7 +36,9 @@
     </script>
 </head>
 <body>
-    <?php require_once('views/header.php'); ?>
+    <?php //print_r($datos);
+    //print_r($data);
+;    require_once('views/header.php'); ?>
     <main class="solicitud">
         <h1>Solicitud de Álbum Impreso</h1>
         <p>Mediante esta opción de impresión de álbum y envío de uno de tus álbumes a todo color, toda resolucion. Lorem ipsum dolor sit, 
@@ -87,7 +89,7 @@
                 </table>
 
                 <div class="tabla_calculada_div">
-                    <?php echo $tablaHtml; ?>
+                    <?php echo $data['tablaHtml']; ?>
                 </div>
             </div>
             
@@ -100,11 +102,17 @@
                             <li>
                                 <label for="nombre_persona_album">Nombre:</label>
                                 <input type="text" id="nombre_persona_album" name="nombre_persona_album" maxlength="200">
+                                <?php if (!empty($data['errores']['nombre'])): ?>
+                                    <p class="mensaje_error"><?php echo htmlspecialchars($data['errores']['nombre']); ?></p>
+                                <?php endif; ?>
                             </li>
                             
                             <li>
                                 <label for="titulo_album">Título del Álbum:</label>
                                 <input type="text" id="titulo_album" name="titulo_album" maxlength="200">
+                                <?php if (!empty($data['errores']['titulo'])): ?>
+                                    <p class="mensaje_error"><?php echo htmlspecialchars($data['errores']['titulo']); ?></p>
+                                <?php endif; ?>
                             </li>
         
                             <li>
@@ -115,6 +123,9 @@
                             <li>
                                 <label for="email">Correo Electrónico:</label>
                                 <input type="text" id="email" name="email" maxlength="200">                      
+                                <?php if (!empty($data['errores']['email'])): ?>
+                                    <p class="mensaje_error"><?php echo htmlspecialchars($data['errores']['email']); ?></p>
+                                <?php endif; ?>
                             </li>
         
                             <!-- Dirección -->
@@ -135,6 +146,9 @@
         
                                     <label for="provincia">Provincia:</label>
                                     <input type="text" id="provincia" name="direccion[provincia]">
+                                    <?php if (!empty($data['errores']['direccion'])): ?>
+                                        <p class="mensaje_error"><?php echo htmlspecialchars($data['errores']['direccion']); ?></p>
+                                    <?php endif; ?>
                                 </fieldset>
                             </li>
         
@@ -170,11 +184,17 @@
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
+                                <?php if (!empty($data['errores']['album_usuario'])): ?>
+                                    <p class="mensaje_error"><?php echo htmlspecialchars($data['errores']['album_usuario']); ?></p>
+                                <?php endif; ?>
                             </li>
                             
                             <li>
                                 <label for="fecha_recepcion">Fecha de Recepción:</label>
                                 <input type="date" id="fecha_recepcion" name="fecha_recepcion">
+                                <?php if (!empty($data['errores']['fecha'])): ?>
+                                    <p class="mensaje_error"><?php echo htmlspecialchars($data['errores']['fecha']); ?></p>
+                                <?php endif; ?>
                             </li>
                             
                             <li>
@@ -182,7 +202,7 @@
                                 <input type="checkbox" id="impresion_color" name="impresion_color">
                             </li>
                         </ul>
-                        <button>Solicitar Album</button>
+                        <button type="submit">Solicitar Album</button>
                     </form>
                 </section>
             </div>

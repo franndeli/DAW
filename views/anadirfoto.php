@@ -5,9 +5,9 @@
     <title>Añadir Foto a Álbum</title>
     <?php
     if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
     } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
     } else {
         echo '<link rel="stylesheet" href="assets/css/style.css">';
     }
@@ -24,10 +24,13 @@
 
     <main class="formulario-anadir-foto">
         <h1>Añadir Foto a Álbum</h1>
-        <form action="home" method="post" enctype="multipart/form-data">
+        <form action="anadirfoto" method="post" enctype="multipart/form-data">
             <p>
                 <label for="titulo">Título:</label>
                 <input type="text" id="titulo" name="titulo">
+                <?php if (isset($errors['titulo'])): ?>
+                    <div class="mensaje_error"><?php echo htmlspecialchars($errors['titulo']); ?></div>
+                <?php endif; ?>
             </p>
 
             <p>
@@ -61,29 +64,36 @@
             <p>
                 <label for="textoAlternativo">Texto Alternativo:</label>
                 <input type="text" id="textoAlternativo" name="textoAlternativo">
+                <?php if (isset($errors['textoAlternativo'])): ?>
+                    <div class="mensaje_error"><?php echo htmlspecialchars($errors['textoAlternativo']); ?></div>
+                <?php endif; ?>
             </p>
 
             <p>
-            <label for="album">Álbum:</label>
-            <select id="album" name="album">
-                <?php if (isset($albumPreseleccionado)): ?>
-                    <option value="<?php echo htmlspecialchars($albumPreseleccionado['IdAlbum']); ?>" selected>
-                        <?php echo htmlspecialchars($albumPreseleccionado['Titulo']); ?>
-                    </option>
-                <?php else: ?>
-                    <option value="" selected>Selecciona un álbum</option>
-                <?php endif; ?>
-                <?php foreach ($albumes as $album): ?>
-                    <?php if (!isset($albumPreseleccionado) || $album['IdAlbum'] != $albumPreseleccionado['IdAlbum']): ?>
-                        <option value="<?php echo htmlspecialchars($album['IdAlbum']); ?>">
-                            <?php echo htmlspecialchars($album['Titulo']); ?>
+                <label for="album">Álbum:</label>
+                <select id="album" name="album">
+                    <?php if (is_array($albumPreseleccionado)): ?>
+                        <option value="<?php echo htmlspecialchars($albumPreseleccionado['IdAlbum']); ?>" selected>
+                            <?php echo htmlspecialchars($albumPreseleccionado['Titulo']); ?>
                         </option>
+                    <?php else: ?>
+                        <option value="" selected>Selecciona un álbum</option>
                     <?php endif; ?>
-                <?php endforeach; ?>
-            </select>
-        </p>
+                    <?php foreach ($albumes as $album): ?>
+                        <?php if (!isset($albumPreseleccionado) || $album['IdAlbum'] != $albumPreseleccionado['IdAlbum']): ?>
+                            <option value="<?php echo htmlspecialchars($album['IdAlbum']); ?>">
+                                <?php echo htmlspecialchars($album['Titulo']); ?>
+                            </option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </select>
+            </p>
 
-            <button type="submit">Añadir Foto</button>
+            <?php if (isset($errors['textoAlternativo'])): ?>
+                <div class="mensaje_error"><?php echo htmlspecialchars($errors['noInsercion']); ?></div>
+            <?php endif; ?>
+
+            <button type="submit" name="anadelafoto">Añadir Foto</button>
         </form>
     </main>
 

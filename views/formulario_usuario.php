@@ -15,17 +15,16 @@
         </p>
         
         <p>
-            <label for="contraseña_r">Contraseña:</label>
-            <input type="text" id="contraseña_r" name="contraseña_r" value="<?php echo htmlspecialchars($datosUsuario['Clave'] ?? ''); ?>">
-            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data['errors']['contraseña_r'])): ?>
+            <label for="contraseña_r"><?php echo ($action_url == 'datosusuario') ? 'Nueva Contraseña:' : 'Contraseña:'; ?></label>
+            <input type="text" id="contraseña_r" name="contraseña_r" value="<?php echo ($action_url == 'datosusuario') ? '' : htmlspecialchars($datosUsuario['Clave'] ?? ''); ?>">
+            <?php if (!empty($data['errors']['contraseña_r'])): ?>
                 <p class="mensaje_error"><?php echo htmlspecialchars($data['errors']['contraseña_r']); ?></p>
             <?php endif; ?>
         </p>
         
         <p>
             <label for="repetir_contraseña">Repetir contraseña:</label>
-            <input type="text" id="repetir_contraseña" name="repetir_contraseña" value="<?php echo htmlspecialchars($_POST['repetir_contraseña'] ?? ''); ?>">
-            <p class="mensaje-error" id="mensaje-repetir-contraseña"></p>
+            <input type="text" id="repetir_contraseña" name="repetir_contraseña">
             <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data['errors']['repetir_contraseña'])): ?>
                 <p class="mensaje_error"><?php echo htmlspecialchars($data['errors']['repetir_contraseña']); ?></p>
             <?php endif; ?>
@@ -34,7 +33,9 @@
         <p>
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" value="<?php echo htmlspecialchars($datosUsuario['Email'] ?? ''); ?>">
-            <p class="mensaje-error" id="mensaje-email"></p> <!-- Etiqueta para mensaje de error -->
+            <?php if (!empty($data['errors']['email'])): ?>
+                <p class="mensaje_error"><?php echo htmlspecialchars($data['errors']['email']); ?></p>
+            <?php endif; ?>
         </p>
 
         <p>
@@ -45,13 +46,14 @@
                 <option value="2" <?php if (isset($datosUsuario['Sexo']) && $datosUsuario['Sexo'] == 2) echo 'selected'; ?>>Mujer</option>
                 <option value="otro" <?php if (isset($datosUsuario['Sexo']) && $datosUsuario['Sexo'] == 'otro') echo 'selected'; ?>>Otro</option>
             </select>
-            <p class="mensaje-error" id="mensaje-sexo"></p> <!-- Etiqueta para mensaje de error -->
         </p>
 
         <p>
             <label for="fechaNacimiento">Fecha de nacimiento:</label>
             <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo htmlspecialchars($datosUsuario['FNacimiento'] ?? ''); ?>">
-            <p class="mensaje-error" id="mensaje-nacimiento"></p> <!-- Etiqueta para mensaje de error -->
+            <?php if (!empty($data['errors']['fechaNacimiento'])): ?>
+                <p class="mensaje_error"><?php echo htmlspecialchars($data['errors']['fechaNacimiento']); ?></p>
+            <?php endif; ?>
         </p>
 
         <p>
@@ -77,6 +79,6 @@
             <input type="file" accept="image/*" id="foto_perfil" name="foto_perfil">
         </p>
         
-        <button type="submit">Registrar</button>
+        <button type="submit"><?php echo htmlspecialchars($textoBoton); ?></button>
     </form>
 </fieldset>

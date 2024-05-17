@@ -2,9 +2,16 @@
 // controllers/ComprobacionalbumController.php
 
 require_once 'core/Controller.php';
+require_once 'models/Solicitud.php';
+require_once 'models/Album.php';
 
 class ComprobacionalbumController extends Controller {
-    
+    private $albumModel;
+
+    public function __construct() {
+        $this->albumModel = new Album();
+    }
+
     public function index() {
         $numPaginas = 10; // Valor inventado
         $numFotos = 30; // Valor inventado
@@ -17,10 +24,12 @@ class ComprobacionalbumController extends Controller {
         // Calcula los costes
         $costeTotal = $this->calcularCostes($numPaginas, $numFotos, $color, $dpi, $num_copias);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['confirmar'])) {
+
+            $_SESSION['datos_solicitud'] = $_POST;
             // Procesar los datos del formulario
             $datos = [
-                'nombre_persona_album' => $_POST['nombre_persona_album'] ?? 'o',
+                'nombre_persona_album' => $_POST['nombre_persona_album'] ?? '',
                 'titulo_album' => $_POST['titulo_album'] ?? '',
                 'texto_adicional' => $_POST['texto_adicional'] ?? '',
                 'email' => $_POST['email'] ?? 'ejemplo@gmail.com',
@@ -41,8 +50,39 @@ class ComprobacionalbumController extends Controller {
                 'costeTotal' => $costeTotal,
             ];
 
-            // Cargar la vista con los datos del formulario
+            $datos['direccion_completa'] = $datos['direccion']['calle'] . " " . 
+                               $datos['direccion']['numero'] . ", " . 
+                               $datos['direccion']['codigopostal'] . " " . 
+                               $datos['direccion']['localidad'] . ", " . 
+                               $datos['direccion']['provincia'];
+
+            
+            // Convertir impresión a color a valor entero (1: Sí, 0: No)
+            $datos['impresion_color'] = (isset($datos['impresion_color']) && $datos['impresion_color'] === 'on') ? 1 : 0;
+            $albumSeleccionado = $this->albumModel->obtenerAlbum($_POST['album_usuario']);
+            $datos['nombre_album'] = $albumSeleccionado['Titulo'];
+
             $this->view('comprobacionalbum', ['datos' => $datos]);
+
+        } elseif (isset($_POST['confirmar'])) {
+            // Confirmar la solicitud
+            $datos = $_SESSION['datos_solicitud']; 
+            
+            // Recuperar los datos de la sesión
+            $solicitudModel = new Solicitud();
+    
+            // Convertir la impresión a color a valor entero (1: Sí, 0: No)
+            $datos['impresion_color'] = ($datos['impresion_color'] === 'on') ? 1 : 0;
+    
+            // Insertar la solicitud
+            if ($solicitudModel->insertarSolicitud($datos)) {
+                unset($_SESSION['datos_solicitud']); // Limpiar los datos de la sesión
+                header('Location: home'); // Redirigir al inicio o a la página de éxito
+                exit;
+            } else {
+                $error = "Error al insertar la solicitud."; // Manejar el error de inserción aquí
+                $this->view('comprobacionalbum', ['datos' => $datos, 'error' => $error]);
+            }
         } else {
             // Redirigir al formulario si se accede a esta página sin enviar el formulario
             header('Location: solicitudalbum');

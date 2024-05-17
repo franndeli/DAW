@@ -4,7 +4,10 @@ require_once 'core/Model.php';
 
 class Album extends Model {
     public function obtenerAlbumesPorUsuario($idUsuario) {
-        $query = "SELECT * FROM albumes WHERE Usuario = :idUsuario";
+        $query = "SELECT a.*, 
+                (SELECT COUNT(*) FROM fotos WHERE Album = a.IdAlbum) as cantidadFotos 
+                FROM albumes a 
+                WHERE a.Usuario = :idUsuario";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':idUsuario', $idUsuario, PDO::PARAM_INT);
         $stmt->execute();
@@ -58,6 +61,23 @@ class Album extends Model {
         return $resultado; 
     }
 
-
+    public function crearAlbum($titulo, $descripcion, $usuarioId) {
+        if (empty($titulo)) {
+            // El título es obligatorio
+            return false;
+        }
+    
+        $query = "INSERT INTO albumes (Titulo, Descripcion, Usuario) VALUES (:Titulo, :Descripcion, :Usuario)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':Titulo', $titulo, PDO::PARAM_STR);
+        $stmt->bindParam(':Descripcion', $descripcion, PDO::PARAM_STR);
+        $stmt->bindParam(':Usuario', $usuarioId, PDO::PARAM_INT);
+        
+        if ($stmt->execute()) {
+            return $this->conn->lastInsertId();  // Devuelve el ID del álbum creado
+        } else {
+            return false;
+        }
+    }
 }
 ?>

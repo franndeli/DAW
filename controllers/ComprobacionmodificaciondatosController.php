@@ -1,10 +1,10 @@
 <?php
-// controllers/ComprobacionregistroController.php
+// controllers/ComprobacionmodificaciondatosController.php
 require_once 'core/Controller.php';
 require_once 'models/Usuario.php';
 require_once 'models/Paises.php';
 
-class ComprobacionregistroController extends Controller {
+class ComprobacionmodificaciondatosController extends Controller {
     private $usuarioModel;
     private $paisesModel;
 
@@ -16,11 +16,13 @@ class ComprobacionregistroController extends Controller {
     public function index() {
         $paises = $this->paisesModel->obtenerPaises()->fetchAll(PDO::FETCH_ASSOC);
         $data['paises'] = $paises;
+        print_r($_SESSION['validated_data']);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmar'])) {
             // Crear usuario
-            $usuarioCreado = $this->usuarioModel->crearUsuario($_SESSION['validated_data']);
-            if ($usuarioCreado) {
+            $usuarioActualizado = $this->usuarioModel->actualizarUsuario($_SESSION['validated_data'], $_SESSION['IdUsuario']);
+            $_SESSION['username'] = $_SESSION['validated_data']['nombre_r'];
+            if ($usuarioActualizado) {
                 // Usuario creado con éxito
                 unset($_SESSION['validated_data']); // Limpiar datos de sesión
                 header('Location: home'); // Limpiar datos de sesión
@@ -31,7 +33,7 @@ class ComprobacionregistroController extends Controller {
             }
         } else {
             $data += $_SESSION['validated_data'] ?? [];
-            $this->view('comprobacionregistro', $data);
+            $this->view('comprobacionmodificaciondatos', $data);
         }
     }
 }

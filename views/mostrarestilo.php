@@ -1,21 +1,10 @@
-<?php
-// views/home.php
-?>
-
+<!-- views/mostrarEstilo.php -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $title; ?></title>
-    <?php
-    if (isset($_SESSION['style'])) {
-        echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
-    } elseif (isset($_COOKIE['style'])) {
-        echo '<link rel="stylesheet" href="DAW/' . $_COOKIE['style'] . '">';
-    } else {
-        echo '<link rel="stylesheet" href="assets/css/style.css">';
-    }
-    ?>
+    <title>Mostrar Estilo</title>
+    <link rel="stylesheet" href="<?php echo '/DAW/' . $_SESSION['previsualizacionEstilo']; ?>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +15,10 @@
 <body>
     <?php require_once('views/header.php'); ?>
     <main>
-        <?php $fotos = $data['fotos']; ?>
-        <?php require_once('views/publicaciones.php'); ?>
+        <h1>Previsualización del Estilo</h1>
+        <p>¿Te gusta este estilo?</p>
+        <a href="/DAW/configurarestilos/confirmarEstilo?estiloId=<?php echo $estiloId; ?>">Sí, aplicar este estilo</a>
+        <a href="/DAW/configurarestilos">No, volver a estilos</a>
     </main>
     <?php require_once('views/footer.php'); ?>
 </body>

@@ -1,12 +1,13 @@
 <?php
-// views/comprobacionregistro.php
+// views/comprobacionmodificaciondatos.php
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Comprobación registo</title>
+    <title>Comprobación de Modificación</title>
+
     <?php
     if (isset($_SESSION['style'])) {
         echo '<link rel="stylesheet" href="/DAW/' . $_SESSION['style'] . '">';
@@ -27,8 +28,8 @@
     <?php require_once('views/header.php'); ?>
     <main class="comprobacion_registro">
         <fieldset>
-            <h1>Comprobación de Registro</h1>
-
+            <h1>Comprobación de Modificación de Datos</h1>
+            <!-- Mostrar los datos actualizados de forma similar a comprobacionregistro.php -->
             <p><strong>Nombre:</strong> <?php echo htmlspecialchars($_POST['nombre_r'] ?? ''); ?></p>
             <p><strong>Email:</strong> <?php echo htmlspecialchars($_POST['email'] ?? ''); ?></p>
             <p><strong>Sexo:</strong> 
@@ -53,12 +54,12 @@
                 echo htmlspecialchars($paisNombre);
                 ?>
             </p>
-            <p>¿Es correcto?</p>
-            <form action="comprobacionregistro" method="post">
-                <button type="submit" name="confirmar">Confirmar Registro</button>
+            <p>¿Confirmas los cambios?</p>
+            <form action="comprobacionmodificaciondatos" method="post">
+                <button type="submit" name="confirmar">Confirmar Cambios</button>
             </form>
-
-            <button type="button" onclick="window.history.back();">No, volver</button>
+            
+            <button type="button" onclick="window.history.back();">Cancelar</button>
         </fieldset>
     </main>
     <?php require_once('views/footer.php'); ?>

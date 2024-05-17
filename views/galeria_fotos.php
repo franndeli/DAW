@@ -5,7 +5,7 @@
         <div class="foto-album">
             <h3><?php echo htmlspecialchars($foto['Titulo']); ?></h3>
             <img src="<?php echo htmlspecialchars($foto['Fichero']); ?>" alt="<?php echo htmlspecialchars($foto['Titulo']); ?>">
-            <p>País: <?php echo htmlspecialchars($foto['NomPais']); ?></p>
+            <p>País: <?php echo htmlspecialchars($foto['NomPais'] ?? 'Sín país'); ?></p>
         </div> </a>
     <?php endforeach; ?>
 </div>

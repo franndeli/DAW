@@ -33,6 +33,7 @@ class LoginController extends Controller {
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['IdUsuario'] = $usuario['IdUsuario'];
+            $_SESSION['style'] = $usuario['EstiloFichero'];
 
             if ($rememberMe) {
                 // Establece cookies para recordar al usuario
@@ -102,7 +103,7 @@ class LoginController extends Controller {
         setcookie('style', '', $cookieExpireTime, '/');
     
         // Redirige al inicio
-        header('Location: /DAW/home');
+        header('Location: home');
         exit;
     }
     

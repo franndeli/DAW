@@ -4,7 +4,7 @@ class Database {
         $host = 'localhost';
         $db_name = 'pibd';
         $username = 'root';
-        $password = 'hola';
+        $password = '';
         $conn = null;
 
         try {
