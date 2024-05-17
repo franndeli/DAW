@@ -1,46 +1,34 @@
+<?php
+// views/solicitudalbum.php
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"  type="text/css" href="css/style.css" title="Estilo Principal">
-        <link rel="alternative stylesheet" type="text/css" href="css/modonoche.css" title="Modo Noche" />
-        <link rel="alternative stylesheet" type="text/css" href="css/imprimir.css" title="Imprimir" />
-        <link rel="alternative stylesheet" type="text/css" href="css/bajocontraste.css" title="Bajo Contraste" />
-        <link rel="alternative stylesheet" type="text/css" href="css/letragrande.css" title="Letra Grande" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
-    
-        <script src="https://kit.fontawesome.com/2b7751e003.js" crossorigin="anonymous"></script>
-    
-        <title>DAW23</title>
-    </head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img class="logo_web" src="image/respiro_natural.png" alt="Logo de la página" height="130"></a>
-            <a href="index.html"><p class="titulo">RESPIRO NATURAL</p></a>
-        </div>
-        <div class="enlaces">
-            <nav>
-                <i id="icono_menu" class="fa-solid fa-bars"></i>
-                <ul class="menu">
-                    <li>
-                        <a class="enlaces_menu" href="index.html">Inicio <i class="fa-solid fa-house"></i> </a>
-                    </li>
-                    <li>
-                        <a class="enlaces_menu" href="buscar.html">Buscar <i class="fa-solid fa-magnifying-glass"></i> </a>
-                    </li>
-                    <li>
-                        <a class="enlaces_menu" href="indexsesion.html">Perfil <i class="fa-solid fa-user"></i> </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $title; ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2b7751e003.js" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var slider = document.getElementById('resolucion');
+            var output = document.getElementById('value');
+
+            // Actualiza el valor del span con el valor del slider
+            slider.oninput = function() {
+                output.textContent = this.value;
+            }
+        });
+    </script>
+</head>
+<body>
+    <?php require_once('views/header.php'); ?>
     <main class="solicitud">
         <h1>Solicitud de Álbum Impreso</h1>
         <p>Mediante esta opción de impresión de álbum y envío de uno de tus álbumes a todo color, toda resolucion. Lorem ipsum dolor sit, 
@@ -61,7 +49,7 @@
                         <td>0.10€ por pág.</td>
                     </tr>
                     <tr>
-                        <td>Entre 5 y 10</td>
+                        <td>Entre 5 y 11</td>
                         <td>0.08€ por pág.</td>
                     </tr>
                     <tr>
@@ -78,28 +66,28 @@
                     </tr>
                     <tr>
                         <td>Color</td>
-                        <td>0.05€ por foto.</td>
+                        <td>0.05€ por foto</td>
                     </tr>
                     <tr>
                         <th>Resolución</th>
                         <th>Tarifa</th>
                     </tr>
                     <tr>
-                        <td>Menos de 300 dpi</td>
-                        <td>0.01€ por foto</td>
-                    </tr>
-                    <tr>
                         <td>Más de 300 dpi</td>
                         <td>0.02€ por foto</td>
                     </tr>
                 </table>
+
+                <div class="tabla_calculada_div">
+                    <?php echo $tablaHtml; ?>
+                </div>
             </div>
             
             <div class="formulario_div"> 
                 <section class="formulario_album">
                     <h3>Formulario de solicitud</h3>
                     <p>Rellene el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-                    <form action="comprobacionalbum.html" method="post">
+                    <form action="comprobacionalbum" method="post">
                         <ul>
                             <li>
                                 <label for="nombre_persona_album">Nombre:</label>
@@ -118,7 +106,7 @@
         
                             <li>
                                 <label for="email">Correo Electrónico:</label>
-                                <input type="email" id="email" name="email" maxlength="200">                      
+                                <input type="text" id="email" name="email" maxlength="200">                      
                             </li>
         
                             <!-- Dirección -->
@@ -144,7 +132,7 @@
         
                             <li>
                                 <label for="telefono">Teléfono:</label>
-                                <input type="tel" id="telefono" name="telefono">
+                                <input type="text" id="telefono" name="telefono">
                             </li>
                             
                             <li>
@@ -154,7 +142,7 @@
                             
                             <li>
                                 <label for="num_copias">Número de Copias:</label>
-                                <input type="number" id="num_copias" name="num_copias" min="1" max="99" value="1">
+                                <input type="number" id="num_copias" name="num_copias" min="1" value="1">
                             </li>
                             
                             <li>
@@ -187,18 +175,6 @@
             </div>
         </div>
     </main>
-
-    <footer>
-        <div>
-            <address>
-                Dirección: 123 Calle Principal, Ciudad, País<br>
-                Teléfono: 601-000-000<br>
-                Email: info@tusitio.com
-            </address>
-        </div>
-        <p>&copy; 2023 Francisco José Delicado González y Samuel Cortés Yepes. Todos los derechos reservados.</p>
-        <a class="a_accesibilidad" href="accesibilidad.html">Declaración de Accesibilidad</a>
-    </footer>
-
+    <?php require_once('views/footer.php'); ?>
 </body>
 </html>

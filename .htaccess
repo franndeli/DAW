@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /DAW/
+
+# Ocultar index.php y redirigir todas las solicitudes no directas a archivos o directorios a index.php
+RewriteCond %{THE_REQUEST} ^GET\ /index\.php [NC]
+RewriteRule ^index\.php(/(.*))?$ $2 [R=302,NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
