@@ -2,27 +2,23 @@
 // controllers/FotoController.php
 
 require_once 'core/Controller.php';
+require_once 'models/Foto.php';
+require_once 'models/Usuario.php';
 
 class FotoController extends Controller {
     public function index() {
         $idFoto = $_GET['id'] ?? 0;
-        $esPar = $idFoto % 2 == 0;
 
-        $detallesFoto = $esPar ? [
-            'titulo' => 'Prado',
-            'imagen' => 'campo.jpg',
-            'fecha' => '23/04/2006',
-            'pais' => 'España',
-            'album' => 'Naturaleza Viva',
-            'usuario' => 'usuario123'
-        ] : [
-            'titulo' => 'Acampada',
-            'imagen' => 'acampar.jpg',
-            'fecha' => '28/10/2022',
-            'pais' => 'España',
-            'album' => 'Aventuras al Aire Libre',
-            'usuario' => 'admin'
-        ];
+        $fotoModel = new Foto();
+        $usuarioModel = new Usuario();
+        $detallesFoto = $fotoModel->obtenerFotoPorId($idFoto);
+
+        //print_r($detallesFoto['NomUsuario']);
+
+        if ($detallesFoto) {
+            $usuario = $usuarioModel->obtenerIdPorNombre($detallesFoto['NomUsuario']);
+            $detallesFoto['usuario'] = $usuario;
+        }
 
         $this->view('foto', ['detallesFoto' => $detallesFoto]);
     }

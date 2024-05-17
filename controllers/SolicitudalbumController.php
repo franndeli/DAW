@@ -2,8 +2,18 @@
 // controllers/SolicitudalbumController.php
 
 require_once 'core/Controller.php';
+require_once 'models/Album.php';
+require_once 'models/Usuario.php';
 
 class SolicitudalbumController extends Controller {
+    private $albumModel;
+    private $usuarioModel;
+
+    public function __construct() {
+        $this->albumModel = new Album();
+        $this->usuarioModel = new Usuario();
+    }
+
     private function calcularCostes($numPaginas, $numFotos) {
         $costePaginas = 0;
         if ($numPaginas <= 4) {
@@ -70,9 +80,15 @@ class SolicitudalbumController extends Controller {
     public function index() {
         $tablaHtml = $this->crearTabla();
 
+        $nombreUsuario = $_SESSION['username'] ?? (isset($_COOKIE['username']) ? $_COOKIE['username'] : null);
+        $idUsuarioActual = $this->usuarioModel->obtenerIdPorNombre($nombreUsuario);
+
+        $albumes = $this->albumModel->obtenerAlbumesPorUsuario($idUsuarioActual);
+
         $data = [
             'title' => 'Impresión del álbum',
-            'tablaHtml' => $tablaHtml
+            'tablaHtml' => $tablaHtml,
+            'albumes' => $albumes
         ];
         
         $this->view('solicitudalbum', $data);

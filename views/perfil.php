@@ -47,9 +47,12 @@
         </div>
         <nav class="perfil">
             <ul>
-                <li> <a href="#">Modificar datos</a> </li>
+                <li> <a href="datosusuario">Modificar datos</a> </li>
+                <li> <a href="configurarestilos">Configurar estilos</a></li>
                 <li> <a href="#">Darse de baja</a> </li>
-                <li> <a href="#">Visualizar álbumes</a> </li>
+                <li> <a href="misalbumes">Mis álbumes</a> </li>
+                <li> <a href="misfotos">Mis fotos</a> </li>
+                <li> <a href="anadirfoto">Añadir foto a album</a> </li>
                 <li> <a href="crearalbum">Crear un nuevo álbum</a> </li>
                 <li> <a href="solicitudalbum">Solicitar un álbum impreso</a> </li>  
                 <li> <a href="login/logout">Cerrar sesión</a></li>

@@ -1,12 +1,12 @@
 <?php
-// views/home.php
+// views/configurarestilos.php
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $title; ?></title>
+    <title>Estilos</title>
     <?php
     if (isset($_SESSION['style'])) {
         echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
@@ -26,8 +26,16 @@
 <body>
     <?php require_once('views/header.php'); ?>
     <main>
-        <?php $fotos = $data['fotos']; ?>
-        <?php require_once('views/publicaciones.php'); ?>
+        <h1>Configurar Estilos</h1>
+        <ul>
+            <?php //print_r($data['estilos']);
+            foreach ($data['estilos'] as $estilo): ?>
+                <li>
+                    <?php echo htmlspecialchars($estilo['Nombre']); ?> - 
+                    <?php echo htmlspecialchars($estilo['Descripcion']); ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
     </main>
     <?php require_once('views/footer.php'); ?>
 </body>

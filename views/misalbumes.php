@@ -1,12 +1,10 @@
-<?php
-// views/home.php
-?>
+<!-- views/mis_albumes.php -->
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $title; ?></title>
+    <title> Mis álbumes</title>
     <?php
     if (isset($_SESSION['style'])) {
         echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
@@ -25,10 +23,20 @@
 </head>
 <body>
     <?php require_once('views/header.php'); ?>
-    <main>
-        <?php $fotos = $data['fotos']; ?>
-        <?php require_once('views/publicaciones.php'); ?>
+
+    <main class="misalbumes_main">
+        <h1>Mis Álbumes</h1>
+        <div class="lista-albumes">
+            <?php foreach ($data['albumes'] as $album): ?>
+                <a href='veralbumprivado?id= <?php echo htmlspecialchars($album['IdAlbum']); ?>'> 
+                <div class="album">
+                    <p class="titulo_misalbum"><?php echo htmlspecialchars($album['Titulo']); ?></p>
+                    <p><?php echo htmlspecialchars($album['Descripcion']); ?></p>
+                </div> </a>
+            <?php endforeach; ?>
+        </div>
     </main>
+
     <?php require_once('views/footer.php'); ?>
 </body>
 </html>

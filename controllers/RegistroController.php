@@ -2,12 +2,17 @@
 // controllers/RegistroController.php
 
 require_once 'core/Controller.php';
+require_once 'models/Paises.php';
 
 class RegistroController extends Controller {
     public function index() {
+        $paisesModel = new Paises();
+        $paises = $paisesModel->obtenerPaises()->fetchAll(PDO::FETCH_ASSOC);
+
         $data = [
             'title' => 'Registro',
-            'errors' => []
+            'errors' => [],
+            'paises' => $paises
         ];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

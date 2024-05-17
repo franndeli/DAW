@@ -35,8 +35,15 @@
                         <input type="text" id="titulo" name="titulo">
                     </p>
                     <p>
-                        <label for="pais">&#127759; País:</label>
-                        <input type="text" id="pais" name="pais">
+                        <label for="pais">País:</label>
+                        <select id="pais" name="pais">
+                            <option value="" disabled selected>Selecciona un país</option>
+                            <?php foreach ($data['paises'] as $pais): ?>
+                                <option value="<?php echo htmlspecialchars($pais['IdPais']); ?>">
+                                    <?php echo htmlspecialchars($pais['NomPais']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </p>
                     
                     <div class="fechas_desde_hasta">
@@ -50,33 +57,22 @@
                     <button>Buscar</button>
                 </form>
             </fieldset>
-            <h1>Resultados:</h1>
-        <p><?php echo $data['textoBusqueda']; ?></p>
         </div>
-
+        <h1>Resultados:</h1>
+        <p><?php echo $data['textoBusqueda']; ?></p>
         <div class="publicaciones">
-
-            <a href="foto?id=1">
-                <section class="publicacion_indv">
-                    <h2 class="titulo_publicacion">Acampada</h2>
-                    <img class="lista_publicacion_img" src="assets/img/acampar.jpg" alt="Foto1">
-                    <div class="fecha_ubicacion">
-                        <p>23/04/2006</p>
-                        <p>España</p>
-                    </div>
-                </section>
-            </a>
-
-            <a href="foto?id=2">
-                <section class="publicacion_indv">
-                    <h2 class="titulo_publicacion">Prado</h2>
-                    <img class="lista_publicacion_img" src="assets/img/campo.jpg" alt="Foto1">
-                    <div class="fecha_ubicacion">
-                        <p>23/04/2006</p>
-                        <p>España</p>
-                    </div>
-                </section>
-            </a>
+            <?php foreach ($data['resultados'] as $foto): ?>
+                <a href="foto?id=<?php echo htmlspecialchars($foto['idFoto']); ?>">
+                    <section class="publicacion_indv">
+                        <h2 class="titulo_publicacion"><?php echo htmlspecialchars($foto['titulo']); ?></h2>
+                        <img class="lista_publicacion_img" src="<?php echo htmlspecialchars($foto['fichero']); ?>" alt="<?php echo htmlspecialchars($foto['titulo']); ?>">
+                        <div class="fecha_ubicacion">
+                            <p><?php echo htmlspecialchars($foto['fecha']); ?></p>
+                            <p><?php echo htmlspecialchars($foto['NomPais']); ?></p>
+                        </div>
+                    </section>
+                </a>
+            <?php endforeach; ?>
         </div>
     </main>
     <?php require_once('views/footer.php'); ?>

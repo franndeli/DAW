@@ -35,8 +35,15 @@
                         <input type="text" id="titulo" name="titulo">
                     </p>
                     <p>
-                        <label for="pais">&#127759; País:</label>
-                        <input type="text" id="pais" name="pais">
+                        <label for="pais">País:</label>
+                        <select id="pais" name="pais">
+                            <option value="" disabled selected>Selecciona un país</option>
+                            <?php foreach ($data['paises'] as $pais): ?>
+                                <option value="<?php echo htmlspecialchars($pais['IdPais']); ?>">
+                                    <?php echo htmlspecialchars($pais['NomPais']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </p>
                     
                     <div class="fechas_desde_hasta">

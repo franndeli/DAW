@@ -2,19 +2,30 @@
 // controllers/ResultadobusquedaController.php
 
 require_once 'core/Controller.php';
+require_once 'models/Foto.php';
+require_once 'models/Paises.php';
 
 class ResultadobusquedaController extends Controller {
     public function index() {
-        $titulo = htmlspecialchars($_GET['titulo'] ?? 'Sin título');
-        $pais = htmlspecialchars($_GET['pais'] ?? 'Sin país');
-        $fechaInicio = htmlspecialchars($_GET['fechaInicio'] ?? 'Sin fecha de inicio');
-        $fechaFin = htmlspecialchars($_GET['fechaFin'] ?? 'Sin fecha fin');
+        $paisesModel = new Paises();
+        $paises = $paisesModel->obtenerPaises()->fetchAll(PDO::FETCH_ASSOC);
 
-        // Construyes el texto con los datos obtenidos
-        $textoBusqueda = "Resultados de la búsqueda: \"$titulo, $pais, $fechaInicio a $fechaFin\"";
+        $fotoModel = new Foto();
+        $titulo = htmlspecialchars($_GET['titulo'] ?? '');
+        $pais = htmlspecialchars($_GET['pais'] ?? '');
+        $fechaInicio = htmlspecialchars($_GET['fechaInicio'] ?? '');
+        $fechaFin = htmlspecialchars($_GET['fechaFin'] ?? '');
 
-        $this->view('resultadobusqueda', ['textoBusqueda' => $textoBusqueda]);
+        $paisInfo = $paisesModel->obtenerPaisporId($pais);
+        $nombrePais = $paisInfo['NomPais'] ?? 'Sin país';
+
+        // Realizar la búsqueda
+        $resultados = $fotoModel->buscarFotos($titulo, $fechaInicio, $fechaFin, $pais)->fetchAll(PDO::FETCH_ASSOC);
+
+        // Construir texto de búsqueda para la vista
+        $textoBusqueda = "Resultados de la búsqueda: \"$titulo, $nombrePais, $fechaInicio a $fechaFin\"";
+
+        $this->view('resultadobusqueda', ['textoBusqueda' => $textoBusqueda, 'resultados' => $resultados, 'paises' => $paises]);
     }
 }
-
 ?>

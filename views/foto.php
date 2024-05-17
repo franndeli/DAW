@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Foto</title>
+    <title><?php echo htmlspecialchars($data['detallesFoto']['Titulo']); ?></title>
     <?php
     if (isset($_SESSION['style'])) {
         echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
@@ -30,16 +30,18 @@
             (isset($_COOKIE['logged_in']) && $_COOKIE['logged_in'] == '1')): ?>
             <div class="publicacion_section">
                 <section class="publicacion">
-                    <h1><?php echo $data['detallesFoto']['titulo']; ?></h1>
-                    <img src="assets/img/<?php echo $data['detallesFoto']['imagen']; ?>" alt="Foto">
+                    <h1><?php $foto = $data['detallesFoto'];
+                    //print_r($foto);
+                    echo htmlspecialchars($foto['Titulo']); ?></h1>
+                    <img src="<?php echo htmlspecialchars($foto['Fichero']); ?>" alt="<?php echo htmlspecialchars($foto["Titulo"]); ?>">
                     <div class="fecha_ubicacion_solo">
-                        <p><?php echo $data['detallesFoto']['fecha']; ?>,</p>
-                        <p><?php echo $data['detallesFoto']['pais']; ?></p>
+                        <p><?php echo htmlspecialchars($foto['Fecha']); ?></p>
+                        <p><?php echo htmlspecialchars($foto['NomPais']); ?></p>
                     </div>
                     <div class="album_usuario">
-                        <p>Álbum de fotos: <?php echo $data['detallesFoto']['album']; ?></p>
-                        <p>Usuario: <?php echo $data['detallesFoto']['usuario']; ?></p>
-                    </div>                 
+                        <p>Álbum de fotos: <a href="veralbum?id=<?php echo htmlspecialchars($foto['Album']); ?>"><?php echo htmlspecialchars($foto['NombreAlbum']); ?></a></p>
+                        <p>Usuario: <a href="perfilpublico?id=<?php echo htmlspecialchars($foto['usuario']); ?>"><?php echo htmlspecialchars($foto['NomUsuario']); ?></a></p>
+                    </div>       
                 </section>
             </div>
         <?php else: ?>

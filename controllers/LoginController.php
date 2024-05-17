@@ -2,14 +2,14 @@
 // controllers/LoginController.php
 
 require_once 'core/Controller.php';
+require_once 'models/Usuario.php';
 
 class LoginController extends Controller {
-    private $users = [
-        'usuario1' => ['password' => 'contraseña1', 'style' => 'style.css'],
-        'usuario2' => ['password' => 'contraseña2', 'style' => 'modonoche.css'],
-        'usuario3' => ['password' => 'contraseña3', 'style' => 'letragrande.css'],
-        'usuario4' => ['password' => 'contraseña4', 'style' => 'bajocontraste.css'],
-    ];
+    private $usuarioModel;
+
+    public function __construct() {
+        $this->usuarioModel = new Usuario();
+    }
 
     public function index() {
         if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
@@ -25,14 +25,14 @@ class LoginController extends Controller {
         $password = $_POST['contraseña'] ?? '';
         $rememberMe = isset($_POST['remember_me']);
 
-        if (isset($this->users[$username]) && $this->users[$username]['password'] === $password) {
+        $usuario = $this->usuarioModel->obtenerPorNombre($username);
+
+        if ($usuario && $usuario['Clave'] === $password) {
             // Inicia la sesión
             session_start();
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $username;
-
-            $_SESSION['style'] = $this->users[$username]['style'];
-
+            $_SESSION['IdUsuario'] = $usuario['IdUsuario'];
 
             if ($rememberMe) {
                 // Establece cookies para recordar al usuario

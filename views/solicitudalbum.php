@@ -164,6 +164,11 @@
                                 <label for="album_usuario">Álbum de Fotos:</label>
                                 <select id="album_usuario" name="album_usuario">
                                     <option value="">Selecciona un álbum</option>
+                                    <?php foreach ($data['albumes'] as $album): ?>
+                                        <option value="<?php echo htmlspecialchars($album['IdAlbum']); ?>">
+                                            <?php echo htmlspecialchars($album['Titulo']); ?>
+                                        </option>
+                                    <?php endforeach; ?>
                                 </select>
                             </li>
                             

@@ -3,13 +3,17 @@
 
 define('ACCESS_ALLOWED', true);
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 // Requiere los archivos
 require_once 'core/Controller.php';
 require_once 'config/Config.php';
 require_once 'router/Router.php';
-require_once 'controllers/LoginController.php'; // Importa LoginController aquí
+require_once 'controllers/LoginController.php';
 
 // Instancia el controlador de login y verifica las cookies
 $loginController = new LoginController();

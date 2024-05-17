@@ -171,21 +171,62 @@ main > legend {
 }
 
 .publicacion > img{
-    width: 100%;
+    width: 700px;
     height: auto;
 }
 
 .fecha_ubicacion_solo{
     display: flex;
+    gap: 200px;
 }
 
 .fecha_ubicacion_solo > p {
-    font-size: 18px;
+    font-size: 20px;
+    text-decoration: solid;
 }
 
 .album_usuario{
     display: flex;
     gap: 50px;
+    font-size: 17px;
+}
+
+.album_usuario a{
+    background-image: linear-gradient(
+      to right,
+      #000000,
+      #000000 50%, /* Cambio el color del medio para que sea el color principal */
+      #48533e 0%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.1s ease-in-out;
+
+    text-decoration: none;
+}
+
+.album_usuario a:before {
+    content: '';
+    background: #000000;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.1s ease-in-out;
+}
+
+.album_usuario a:hover {
+    background-position: 0;
+}
+
+.album_usuario a:hover::before {
+    width: 100%;
 }
 /*PUBLICACIONES*/
 
@@ -196,6 +237,11 @@ main > legend {
     border-radius: 5px;
     width: 330px;
     height: 350px;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.publicacion_indv:hover{
+    box-shadow: 6px 6px 10px #6B7D5C;;
 }
 
 .main_accesibilidad{
@@ -303,6 +349,8 @@ h2{
 
 .titulo_publicacion{
     text-align: center;
+    text-decoration: none;
+    color: #000000
 }
 /*TÍTULOS*/
 
@@ -331,6 +379,13 @@ footer {
     max-width: 750px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.buscador_avanzado select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 /* Estilo para el contenedor de búsqueda */
@@ -429,10 +484,10 @@ footer {
     width: 100%;
 }
 
-.registro > input[type="text"]:hover, 
-.registro > input[type="email"]:hover, 
-.registro > input[type="tel"]:hover, 
-.registro > select:hover {
+.registro input[type="text"]:hover, 
+.registro input[type="email"]:hover, 
+.registro input[type="tel"]:hover, 
+.registro select:hover {
     box-shadow: 0 0 10px #6B7D5C;
     transition: box-shadow 0.2s ease;
 }
@@ -663,7 +718,309 @@ input[type="submit"]:hover {
     justify-content: center;
 }
 
+/*PERFIL PUBLICO*/
+.perfil-publico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
 
+.perfil-publico img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #6B7D5C;
+}
+
+.albumes-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.albumes-usuario ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.albumes-usuario ul a {
+    display: block;
+    color: #6B7D5C;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.albumes-usuario ul a:hover {
+    background-color: #6B7D5C;
+    color: white;
+}
+
+/* VER ALBUM */
+.veralbum-main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.veralbum-info {
+    margin-bottom: 20px;
+}
+
+.veralbum-info p {
+    font-size: 20px;
+}
+.veralbum-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.veralbum-galeria a{
+    text-decoration: none;
+    color: black
+}
+
+.foto-album {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #6B7D5C;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+}
+
+.foto-album img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+
+}
+
+/* Estilos para Mis Álbumes */
+.lista-albumes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.misalbumes_main h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.album {
+    background-color: #f7f7f7;
+    border: 2px solid #6B7D5C;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.album:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.titulo_misalbum {
+    font-size: 20px;
+    color: #6B7D5C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.album p {
+    color: #333;
+    margin-top: 10px;
+}
+
+/*MIS FOTOS*/
+.galeria-fotos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+}
+
+.foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    background-color: #f7f7f7;
+    border: 2px solid #6B7D5C;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.foto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.foto h3 {
+    color: #48533e;
+    margin: 10px 0;
+}
+
+.foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.foto p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.foto a {
+    color: #48533e;
+    text-decoration: none;
+}
+
+.foto a:hover {
+    text-decoration: underline;
+}
+
+/* VER ALBUM PRIVADO */
+.veralbumprivado {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.veralbumprivado h1 {
+    font-size: 28px;
+    color: #48533e;
+    margin-bottom: 20px;
+}
+
+.veralbumprivado p {
+    color: #333;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.añadirfoto_boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 15px;
+    background-color: #6B7D5C; 
+    color: white;
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    font-size: 20px;
+    border: 2px solid transparent; 
+}
+
+.añadirfoto_boton:hover, .añadirfoto_boton:focus {
+    background-color: #48533e;
+    color: white;
+    text-decoration: none; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.añadirfoto_boton:active {
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3); /* Efecto de hundimiento al hacer click */
+}
+
+/* Estilo para el formulario de añadir foto */
+.formulario-anadir-foto {
+    width: 100%;
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #6B7D5C;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+}
+
+.formulario-anadir-foto h1 {
+    font-size: 28px;
+    color: #48533e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formulario-anadir-foto p {
+    margin-bottom: 10px;
+}
+
+.formulario-anadir-foto label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.formulario-anadir-foto input[type="text"],
+.formulario-anadir-foto input[type="date"],
+.formulario-anadir-foto select,
+.formulario-anadir-foto textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario-anadir-foto input[type="file"] {
+    border: none;
+}
+
+.formulario-anadir-foto button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    background-color: #6B7D5C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formulario-anadir-foto button:hover {
+    background-color: #48533e;
+    transition: background-color 0.2s ease;
+}
+
+/* Estilo para los inputs y textarea al enfocarse */
+.formulario-anadir-foto input[type="text"]:focus,
+.formulario-anadir-foto input[type="date"]:focus,
+.formulario-anadir-foto select:focus,
+.formulario-anadir-foto textarea:focus {
+    box-shadow: 0 0 10px #6B7D5C;
+    outline: none;
+}
+
+/* Responsive Design para el formulario */
+@media (max-width: 600px) {
+    .formulario-anadir-foto {
+        padding: 15px;
+    }
+}
+
+
+/*MEDIA QUERIES PARA RESPONSIVE*/
 
 @media (max-width: 680px) {
     .titulo{
@@ -692,6 +1049,15 @@ input[type="submit"]:hover {
 
     .menu{
         display: none;
+    }
+}
+
+@media (max-width: 1515px) {
+    .galeria-fotos {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
     }
 }
 
