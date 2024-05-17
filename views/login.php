@@ -25,7 +25,12 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalid_credentials') {
                 <label for="contraseña">Contraseña:</label>
                 <input type="text" id="contraseña" name="contraseña">
             </div>
+            <div>
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label for="remember_me">Recordarme en este equipo</label>
+            </div>
             <button type="submit">Entrar</button>
         </form>
     </div>
 </li>
+

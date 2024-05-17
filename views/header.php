@@ -2,6 +2,20 @@
 // views/header.php
 ?>
 
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+$username = $isLoggedIn ? $_SESSION['username'] : (isset($_COOKIE['username']) ? $_COOKIE['username'] : null);
+?>
+
+<style>
+    .bienvenido{
+        color: #6B7D5C;
+    }
+</style>
 
 <header>
     <div class="logo">
@@ -18,12 +32,21 @@
                 <li>
                     <a class="enlaces_menu" href="buscar">Buscar <i class="fa-solid fa-magnifying-glass"></i> </a>
                 </li>
-                    <?php if (isset($_COOKIE['logged_in']) && $_COOKIE['logged_in'] == '1'): ?>
-                    <?php else: ?>
-                        <?php require_once('views/login.php'); ?>
+                    <?php
+                        if (!isset($_SESSION['logged_in']) && !isset($_COOKIE['username'])) {
+                            require_once('views/login.php');
+                        }
+
+                        if (isset($_COOKIE['last_visit']) && $isLoggedIn): ?>
+                            <div class="welcome-message">
+                                <p class="bienvenido"> Bienvenido de nuevo, <strong><?php echo htmlspecialchars($username); ?></strong>. 
+                                <br>Su última visita fue el <?php echo htmlspecialchars($_COOKIE['last_visit']); ?>.</p>
+                            </div>
                     <?php endif; ?>
                 <li>
-                    <?php if (isset($_COOKIE['logged_in']) && $_COOKIE['logged_in'] == '1'): ?>
+                <?php
+                    // Verificar si la sesión está activa O si existe la cookie de usuario
+                    if ($isLoggedIn): ?>
                         <a class="enlaces_menu" href="perfil">Perfil <i class="fa-solid fa-user"></i> </a>
                     <?php else: ?>
                         <a class="enlaces_menu" href="registro">Registrar <i class="fa-regular fa-user"></i> </a>

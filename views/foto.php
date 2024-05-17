@@ -7,7 +7,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Foto</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <?php
+    if (isset($_SESSION['style'])) {
+        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+    } elseif (isset($_COOKIE['style'])) {
+        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+    } else {
+        echo '<link rel="stylesheet" href="assets/css/style.css">';
+    }
+    ?>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +26,8 @@
 <body>
     <?php require_once('views/header.php'); ?>
     <main>
-        <?php if (isset($_COOKIE['logged_in']) && $_COOKIE['logged_in'] == '1'): ?>
+        <?php if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) || 
+            (isset($_COOKIE['logged_in']) && $_COOKIE['logged_in'] == '1')): ?>
             <div class="publicacion_section">
                 <section class="publicacion">
                     <h1><?php echo $data['detallesFoto']['titulo']; ?></h1>

@@ -7,7 +7,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Comprobación registo</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <?php
+    if (isset($_SESSION['style'])) {
+        echo '<link rel="stylesheet" href="assets/css/' . $_SESSION['style'] . '">';
+    } elseif (isset($_COOKIE['style'])) {
+        echo '<link rel="stylesheet" href="assets/css/' . $_COOKIE['style'] . '">';
+    } else {
+        echo '<link rel="stylesheet" href="assets/css/style.css">';
+    }
+    ?>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
