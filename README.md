@@ -143,6 +143,6 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
 ## Contacto
 
-Para cualquier consulta o sugerencia, por favor contacta a `delicadofranvi@gmail.com`.
+Para cualquier consulta o sugerencia, por favor contacta a [delicadofranvi@gmail.com](mailto:delicadofranvi@gmail.com).
 
 ¡Gracias por tu interés en "Respiro natural"!
